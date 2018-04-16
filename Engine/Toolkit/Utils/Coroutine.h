@@ -68,6 +68,7 @@ struct Coroutine
 {
     /**
      * Record coroutine run step
+	 * !! Define at top, friendly with asm
      */
     void*                 step;
 
@@ -154,7 +155,8 @@ extern struct ACoroutine ACoroutine[1];
 #define ACoroutine_Begin()                    \
     if (coroutine->step != NULL)              \
     {                                         \
-        goto *coroutine->step;                \
+        _asm {mov eax, dword ptr[coroutine]}	  \
+		_asm {jmp dword ptr[eax]}			  \
     }                                         \
     coroutine->state = CoroutineState_Running 
 
@@ -172,7 +174,8 @@ extern struct ACoroutine ACoroutine[1];
     coroutine->waitValue    = waitFrames;                   \
     coroutine->curWaitValue = 0.0f;                         \
     coroutine->waitType     = CoroutineWaitType_Frames;     \
-    coroutine->step         = &&ACoroutine_Step(__LINE__);  \
+	_asm {mov eax, [coroutine]}								\
+	_asm {mov dword ptr[eax], offset ACoroutine_Step(__LINE__)}	\
     return;                                                 \
     ACoroutine_Step(__LINE__):
 
@@ -186,7 +189,8 @@ extern struct ACoroutine ACoroutine[1];
     coroutine->waitValue    = waitSeconds;                  \
     coroutine->curWaitValue = 0.0f;                         \
     coroutine->waitType     = CoroutineWaitType_Seconds;    \
-    coroutine->step         = &&ACoroutine_Step(__LINE__);  \
+	_asm {mov eax, [coroutine]}								\
+	_asm {mov dword ptr[eax], offset ACoroutine_Step(__LINE__)}	\
     return;                                                 \
     ACoroutine_Step(__LINE__):
 
@@ -201,7 +205,8 @@ extern struct ACoroutine ACoroutine[1];
     coroutine->curWaitValue = 0.0f;                         \
     coroutine->waitType     = CoroutineWaitType_Coroutines; \
     AArrayList_Add((waitCoroutine)->waits, coroutine);      \
-    coroutine->step         = &&ACoroutine_Step(__LINE__);  \
+	_asm {mov eax, [coroutine]}								\
+	_asm {mov dword ptr[eax], offset ACoroutine_Step(__LINE__)}	\
     return;                                                 \
     ACoroutine_Step(__LINE__):
 
