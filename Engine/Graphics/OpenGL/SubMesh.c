@@ -13,7 +13,6 @@
 #include "Engine/Graphics/OpenGL/Mesh.h"
 #include "Engine/Toolkit/Platform/Log.h"
 
-
 static inline void InitSubMesh(SubMesh* subMesh, float width, float height)
 {
     ADrawable->Init(subMesh->drawable);
@@ -159,7 +158,7 @@ static SubMesh* CreateWithQuad(Texture* texture, Quad* quad)
 }
 
 
-struct ASubMesh ASubMesh[1] =
+struct _ASubMesh ASubMesh[1] =
 {
     CreateWithData,
     CreateWithQuad,

@@ -106,7 +106,7 @@ struct Mesh
 };
 
 
-struct AMesh
+struct _AMesh
 {
     Mesh*     (*Create)            (Texture* texture);
     void      (*Init)              (Texture* texture,  Mesh* outMesh);
@@ -153,7 +153,7 @@ struct AMesh
 };
 
 
-extern struct AMesh AMesh[1];
+extern struct _AMesh AMesh[1];
 
 
 static inline void AMesh_Draw(Mesh* mesh)

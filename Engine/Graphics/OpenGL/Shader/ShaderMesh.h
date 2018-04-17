@@ -16,7 +16,7 @@
 #include "Engine/Toolkit/Math/Math.h"
 
 
-struct AShaderMesh
+struct _AShaderMesh
 {
     GLuint program;
     GLuint attribPosition;
@@ -32,7 +32,7 @@ struct AShaderMesh
 };
 
 
-extern struct AShaderMesh AShaderMesh[1];
+extern struct _AShaderMesh AShaderMesh[1];
 
 
 #endif

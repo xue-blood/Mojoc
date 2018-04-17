@@ -110,7 +110,7 @@ struct Coroutine
 };
 
 
-struct ACoroutine
+struct _ACoroutine
 {
     /**
      * Bind CoroutineRun with Coroutine and enter queue ready to run
@@ -124,7 +124,7 @@ struct ACoroutine
 };
 
 
-extern struct ACoroutine ACoroutine[1];
+extern struct _ACoroutine ACoroutine[1];
 
 
 #define ACoroutine_AddParam(coroutine, value) \

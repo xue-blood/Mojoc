@@ -12,6 +12,7 @@
 
 
 #include <stddef.h>
+#include "Define.h"
 
 
 typedef union

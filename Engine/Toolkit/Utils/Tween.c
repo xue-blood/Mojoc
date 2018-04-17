@@ -422,7 +422,7 @@ static void Update(float deltaSeconds)
 }
 
 
-struct ATween ATween[1] =
+struct _ATween ATween[1] =
 {
     GetAction,
     AddTweenActionValue,

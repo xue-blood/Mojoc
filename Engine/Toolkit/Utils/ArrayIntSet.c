@@ -142,7 +142,7 @@ static void Clear(ArrayIntSet* arrayIntSet)
 }
 
 
-struct AArrayIntSet AArrayIntSet[1] =
+struct _AArrayIntSet AArrayIntSet[1] =
 {
     Create,
     Init,

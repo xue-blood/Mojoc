@@ -17,7 +17,7 @@
 #include "Engine/Toolkit/Head/Define.h"
 
 
-struct AGLTool
+struct _AGLTool
 {
     /**
      * Screen pixel width
@@ -82,7 +82,7 @@ struct AGLTool
 };
 
 
-extern struct AGLTool AGLTool[1];
+extern struct _AGLTool AGLTool[1];
 
 
 //----------------------------------------------------------------------------------------------------------------------

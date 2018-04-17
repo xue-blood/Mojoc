@@ -14,7 +14,7 @@
 #include "Engine/Toolkit/Head/Define.h"
 
 
-struct AImage
+struct _AImage
 {
     /**
      * Read png pixel data from file, caller must be free it
@@ -25,7 +25,7 @@ struct AImage
 };
 
 
-extern struct AImage AImage[1];
+extern struct _AImage AImage[1];
 
 
 #endif

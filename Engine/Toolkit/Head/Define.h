@@ -16,5 +16,15 @@
  */
 #define NULL_PTR (void*[]) {NULL}
 
+/**
+ * The inline define for msvc 2013
+ */
+#ifndef inline
+   #define inline
+#endif
+
+// #ifndef MAX_PATH
+// 	#define MAX_PATH 256
+// #endif
 
 #endif

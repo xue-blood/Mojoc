@@ -18,7 +18,7 @@ static void Init()
 }
 
 
-struct AToolkit AToolkit[1] =
+struct _AToolkit AToolkit[1] =
 {
     Init
 };

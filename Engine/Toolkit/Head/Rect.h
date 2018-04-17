@@ -12,7 +12,7 @@
 
 
 #include <stdbool.h>
-
+#include "Define.h"
 
 typedef struct
 {

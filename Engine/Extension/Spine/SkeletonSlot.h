@@ -27,7 +27,7 @@ typedef struct
 SkeletonSlot;
 
 
-struct ASkeletonSlot
+struct _ASkeletonSlot
 {
     SkeletonSlot* (*Create)           (SkeletonSlotData* slotData, Skeleton* skeleton);
     void          (*Init)             (SkeletonSlotData* slotData, Skeleton* skeleton, SkeletonSlot* outSlot);
@@ -37,7 +37,7 @@ struct ASkeletonSlot
 };
 
 
-extern struct ASkeletonSlot ASkeletonSlot[1];
+extern struct _ASkeletonSlot ASkeletonSlot[1];
 
 
 static inline SkeletonBoundingBoxAttachmentData* ASkeletonSlot_GetBoundingBox(SkeletonSlot* slot)

@@ -14,7 +14,7 @@
 #include <stdbool.h>
 
 
-struct AGraphics
+struct _AGraphics
 {
     /**
      * Default false
@@ -52,7 +52,7 @@ struct AGraphics
 };
 
 
-extern struct AGraphics AGraphics[1];
+extern struct _AGraphics AGraphics[1];
 
 
 #endif

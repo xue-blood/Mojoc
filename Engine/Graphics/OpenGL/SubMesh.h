@@ -59,7 +59,7 @@ struct SubMesh
 };
 
 
-struct ASubMesh
+struct _ASubMesh
 {
     /**
      * The positionArr(has x y z) uvArr and indexArr will copy in
@@ -78,7 +78,7 @@ struct ASubMesh
 };
 
 
-extern struct ASubMesh ASubMesh[1];
+extern struct _ASubMesh ASubMesh[1];
 
 
 #endif

@@ -122,7 +122,7 @@ struct  PhysicsBody
 };
 
 
-struct APhysicsBody
+struct _APhysicsBody
 {
     /**
      * Create body with shape by vertices
@@ -138,7 +138,7 @@ struct APhysicsBody
 };
 
 
-extern struct APhysicsBody APhysicsBody[1];
+extern struct _APhysicsBody APhysicsBody[1];
 
 
 static inline bool APhysicsBody_CheckState(PhysicsBody* physicsBody, PhysicsBodyState checkState)

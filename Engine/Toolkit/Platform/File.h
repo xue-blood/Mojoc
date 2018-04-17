@@ -23,7 +23,7 @@
 typedef struct File File;
 
 
-struct AFile
+struct _AFile
 {
     /**
      * Open file from platform directory with relative file path
@@ -82,7 +82,7 @@ struct AFile
 };
 
 
-extern struct AFile AFile[1];
+extern struct _AFile AFile[1];
 
 
 #endif

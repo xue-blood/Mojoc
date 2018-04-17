@@ -19,7 +19,7 @@
 #include "Engine/Toolkit/Utils/Array.h"
 
 
-struct AGLPrimitive
+struct _AGLPrimitive
 {
     /**
      * Default 1.0f
@@ -63,7 +63,7 @@ struct AGLPrimitive
 };
 
 
-extern struct AGLPrimitive AGLPrimitive[1];
+extern struct _AGLPrimitive AGLPrimitive[1];
 
 
 #endif

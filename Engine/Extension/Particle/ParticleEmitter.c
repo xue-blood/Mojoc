@@ -444,7 +444,7 @@ static ParticleEmitter* Create(ParticleEmitterData* emitterData, Texture* textur
 }
 
 
-struct AParticleEmitter AParticleEmitter[1] =
+struct _AParticleEmitter AParticleEmitter[1] =
 {
     Create,
     Init,

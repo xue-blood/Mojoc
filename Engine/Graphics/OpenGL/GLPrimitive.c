@@ -78,7 +78,7 @@ static void DrawRect(Rect* rect)
 }
 
 
-struct AGLPrimitive AGLPrimitive[1] =
+struct _AGLPrimitive AGLPrimitive[1] =
 {
     1.0f,
     1.0f,

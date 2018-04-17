@@ -47,7 +47,7 @@ typedef struct
 Particle;
 
 
-struct AParticle
+struct _AParticle
 {
     /**
      * Initialize Particle that memory has already allocated
@@ -61,7 +61,7 @@ struct AParticle
 };
 
 
-extern struct AParticle AParticle[1];
+extern struct _AParticle AParticle[1];
 
 
 #endif

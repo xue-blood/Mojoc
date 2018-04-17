@@ -59,7 +59,7 @@ typedef struct
 ParticleEmitter;
 
 
-struct AParticleEmitter
+struct _AParticleEmitter
 {
     /**
      * Create new ParticleEmitter that allocate memory and need to free it manually
@@ -88,7 +88,7 @@ struct AParticleEmitter
 };
 
 
-extern struct AParticleEmitter AParticleEmitter[1];
+extern struct _AParticleEmitter AParticleEmitter[1];
 
 
 static inline void AParticleEmitter_Draw(ParticleEmitter* emitter)

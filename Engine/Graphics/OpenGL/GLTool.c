@@ -58,12 +58,12 @@ static GLuint LoadShader(GLenum shaderType, char* shaderSource)
 
         if (infoLen > 0)
         {
-            char buf[infoLen];
+			char *buf = malloc(infoLen);
             glGetShaderInfoLog(shader, infoLen, NULL, buf);
             ALog_E("AGLTool LoadShader could not compile shader %d: %s", shaderType, buf);
 
             glDeleteShader(shader);
-
+			free(buf);
             return 0;
         }
     }
@@ -119,9 +119,10 @@ static GLuint LoadProgram(char* vertexSource, char* fragmentSource)
 
         if (bufLength > 0)
         {
-            char buf[bufLength];
+            char *buf = malloc(bufLength);
             glGetProgramInfoLog(program, bufLength, NULL, buf);
             ALog_E("AGLTool LoadProgram could not link program: %s", buf);
+			free(buf);
         }
 
         glDeleteProgram(program);
@@ -189,7 +190,7 @@ static void LoadTexture(char* filePath, Texture* outTexture)
 }
 
 
-struct AGLTool AGLTool[1] =
+struct _AGLTool AGLTool[1] =
 {
     0.0f,
     0.0f,

@@ -193,7 +193,7 @@ typedef struct
 SkeletonDeformTimeline;
 
 
-struct ASkeletonTimeline
+struct _ASkeletonTimeline
 {
     SkeletonRotateTimeline*     (*CreateRotate)    (int frameCount, int boneIndex);
     SkeletonTranslateTimeline*  (*CreateTranslate) (int frameCount, int boneIndex);
@@ -233,7 +233,7 @@ struct ASkeletonTimeline
 };
 
 
-extern struct ASkeletonTimeline ASkeletonTimeline[1];
+extern struct _ASkeletonTimeline ASkeletonTimeline[1];
 
 
 #endif

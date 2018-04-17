@@ -279,7 +279,7 @@ struct  Drawable
 };
 
 
-struct ADrawable
+struct _ADrawable
 {
     Drawable* (*Create)                ();
     void      (*Init)                  (Drawable* outDrawable);
@@ -380,7 +380,7 @@ struct ADrawable
 };
 
 
-extern struct ADrawable ADrawable[1];
+extern struct _ADrawable ADrawable[1];
 
 
 //----------------------------------------------------------------------------------------------------------------------

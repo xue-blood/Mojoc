@@ -68,7 +68,7 @@ typedef struct
 Quad;
 
 
-struct AQuad
+struct _AQuad
 {
     Quad* (*Create)         (float width, float height);
     void  (*Init)           (float width, float height, Quad* outQuad);
@@ -100,7 +100,7 @@ struct AQuad
 };
 
 
-extern struct AQuad AQuad[1];
+extern struct _AQuad AQuad[1];
 
 
 #endif

@@ -16,7 +16,7 @@
 #include "Engine/Toolkit/Math/Vector.h"
 
 
-struct APhysicsWorld
+struct _APhysicsWorld
 {
     Vector2 gravity;
     Rect    range;
@@ -39,7 +39,7 @@ struct APhysicsWorld
 };
 
 
-extern struct APhysicsWorld APhysicsWorld[1];
+extern struct _APhysicsWorld APhysicsWorld[1];
 
 
 #endif

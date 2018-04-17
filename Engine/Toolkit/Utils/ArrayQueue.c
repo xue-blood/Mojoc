@@ -100,7 +100,7 @@ static void Clear(ArrayQueue* arrayQueue)
 }
 
 
-struct AArrayQueue AArrayQueue[1] =
+struct _AArrayQueue AArrayQueue[1] =
 {
     Create,
     Init,

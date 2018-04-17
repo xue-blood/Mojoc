@@ -39,16 +39,16 @@ static void Init()
     glGetFloatv  (GL_ALIASED_LINE_WIDTH_RANGE,          AGLInfo->lineWidthRange);
 
     glGetIntegerv(GL_MAX_VERTEX_ATTRIBS,               &AGLInfo->maxVertexAttribs);
-    glGetIntegerv(GL_MAX_VERTEX_UNIFORM_VECTORS,       &AGLInfo->maxVertexUniformVectors);
-    glGetIntegerv(GL_MAX_FRAGMENT_UNIFORM_VECTORS,     &AGLInfo->maxFragmentUniformVectors);
-    glGetIntegerv(GL_MAX_VARYING_VECTORS,              &AGLInfo->maxVaryingVectors);
+//     glGetIntegerv(GL_MAX_VERTEX_UNIFORM_VECTORS,       &AGLInfo->maxVertexUniformVectors);
+//     glGetIntegerv(GL_MAX_FRAGMENT_UNIFORM_VECTORS,     &AGLInfo->maxFragmentUniformVectors);
+//     glGetIntegerv(GL_MAX_VARYING_VECTORS,              &AGLInfo->maxVaryingVectors);
     glGetIntegerv(GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS,   &AGLInfo->maxVertexTextureImageUnits);
     glGetIntegerv(GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS, &AGLInfo->maxCombinedTextureImageUnits);
     glGetIntegerv(GL_MAX_TEXTURE_IMAGE_UNITS,          &AGLInfo->maxTextureImageUnits);
 }
 
 
-struct AGLInfo AGLInfo[1] =
+struct _AGLInfo AGLInfo[1] =
 {
     {
         .Init = Init

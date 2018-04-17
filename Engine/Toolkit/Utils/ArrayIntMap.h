@@ -47,7 +47,7 @@ typedef struct
 ArrayIntMap;
 
 
-struct AArrayIntMap
+struct _AArrayIntMap
 {
     ArrayIntMap* (*Create)            (int valueTypeSize);
     void         (*Init)              (int valueTypeSize, ArrayIntMap* outArrayIntMap);
@@ -140,7 +140,7 @@ struct AArrayIntMap
 };
 
 
-extern struct AArrayIntMap AArrayIntMap[1];
+extern struct _AArrayIntMap AArrayIntMap[1];
 
 
 /**

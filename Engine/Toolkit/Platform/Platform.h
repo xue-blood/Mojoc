@@ -13,7 +13,8 @@
 
 #define PLATFORM_ANDROID 0
 #define PLATFORM_IOS     1
-#define PLATFORM_TARGET  PLATFORM_ANDROID
+#define PLATFORM_WIN32   2
+#define PLATFORM_TARGET  PLATFORM_WIN32
 
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -27,8 +28,11 @@
 
     #define IS_PLATFORM_IOS
 
-#endif
+#elif PLATFORM_TARGET == PLATFORM_WIN32
 
+    #define IS_PLATFORM_WIN32
+
+#endif
 
 //----------------------------------------------------------------------------------------------------------------------
 

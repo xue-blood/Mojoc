@@ -23,7 +23,7 @@ typedef struct
 SkeletonBone;
 
 
-struct ASkeletonBone
+struct _ASkeletonBone
 {
     SkeletonBone* (*Create)        (SkeletonBoneData* boneData);
     void          (*Init)          (SkeletonBoneData* boneData, SkeletonBone* outBone);
@@ -35,7 +35,7 @@ struct ASkeletonBone
 };
 
 
-extern struct ASkeletonBone ASkeletonBone[1];
+extern struct _ASkeletonBone ASkeletonBone[1];
 
 
 #endif

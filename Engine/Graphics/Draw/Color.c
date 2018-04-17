@@ -27,7 +27,7 @@ static void SetWithString(char* colorStr, Color* outColor)
 }
 
 
-struct AColor AColor[1] =
+struct _AColor AColor[1] =
 {
     SetWithString,
 };

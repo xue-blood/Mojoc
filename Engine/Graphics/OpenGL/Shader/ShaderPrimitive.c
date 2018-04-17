@@ -90,7 +90,7 @@ static void Init()
 }
 
 
-struct AShaderPrimitive AShaderPrimitive[1] =
+struct _AShaderPrimitive AShaderPrimitive[1] =
 {
     {
         .Use  = Use,

@@ -634,7 +634,7 @@ static Drawable* Create()
 }
 
 
-struct ADrawable ADrawable[1] =
+struct _ADrawable ADrawable[1] =
 {
     Create,
     Init,

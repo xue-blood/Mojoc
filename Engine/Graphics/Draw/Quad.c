@@ -202,7 +202,7 @@ static void GetQuadIndex(int vertexNumBefore, short outIndexData[Quad_IndexNum])
 }
 
 
-struct AQuad AQuad[1] =
+struct _AQuad AQuad[1] =
 {
     Create,
     Init,

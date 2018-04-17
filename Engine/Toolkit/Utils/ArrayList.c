@@ -370,7 +370,7 @@ static void InitWithCapacity(int elementTypeSize, int capacity, ArrayList* outAr
 }
 
 
-struct AArrayList AArrayList[1] =
+struct _AArrayList AArrayList[1] =
 {
     Create,
     init,

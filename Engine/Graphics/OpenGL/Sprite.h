@@ -54,7 +54,7 @@ typedef struct
 Sprite;
 
 
-struct ASprite
+struct _ASprite
 {
     Sprite* (*Create)             (Texture*    texture);
     void    (*Init)               (Texture*    texture,  Sprite* outSprite);
@@ -78,7 +78,7 @@ struct ASprite
 };
 
 
-extern struct ASprite ASprite[1];
+extern struct _ASprite ASprite[1];
 
 
 static inline void ASprite_Draw(Sprite* sprite)

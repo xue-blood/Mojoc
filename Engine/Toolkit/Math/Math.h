@@ -20,7 +20,7 @@
 #include "Engine/Toolkit/Utils/Array.h"
 
 
-struct AMath
+struct _AMath
 {
     /**
      * Test polygon contains point, true inside or false outside
@@ -35,7 +35,7 @@ struct AMath
 };
 
 
-extern struct AMath AMath[1];
+extern struct _AMath AMath[1];
 
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -79,7 +79,7 @@ extern struct AMath AMath[1];
  */
 static inline float AMath_Random()
 {
-    return rand() / (double) RAND_MAX;
+    return (float)(rand() / (double) RAND_MAX);
 }
 
 
@@ -115,7 +115,7 @@ static inline void AMath_RandomSeedByTime()
  */
 static inline float AMath_ToRadian(float degree)
 {
-    return degree * DEGREE_TO_RADIAN;
+    return (float)(degree * DEGREE_TO_RADIAN);
 }
 
 
@@ -124,7 +124,7 @@ static inline float AMath_ToRadian(float degree)
  */
 static inline float AMath_ToDegree(float radian)
 {
-    return radian * RADIAN_TO_DEGREE;
+    return (float)(radian * RADIAN_TO_DEGREE);
 }
 
 

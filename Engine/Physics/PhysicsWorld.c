@@ -111,7 +111,7 @@ static void DestroyBody(PhysicsBody* body)
 }
 
 
-struct APhysicsWorld APhysicsWorld[1] =
+struct _APhysicsWorld APhysicsWorld[1] =
 {
     {
         .AddBody     = AddBody,

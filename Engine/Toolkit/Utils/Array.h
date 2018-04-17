@@ -29,7 +29,7 @@ typedef struct
 Array;
 
 
-struct AArray
+struct _AArray
 {
     /**
      * Array struct space and elements space in one malloc
@@ -42,7 +42,7 @@ struct AArray
 };
 
 
-extern struct AArray AArray[1];
+extern struct _AArray AArray[1];
 
 
 /**

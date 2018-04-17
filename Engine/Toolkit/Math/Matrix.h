@@ -41,7 +41,7 @@ Matrix4;
     }
 
 
-struct AMatrix
+struct _AMatrix
 {
     /**
      * Multiply left and right matrix4 into outMatrix4
@@ -167,7 +167,7 @@ struct AMatrix
 };
 
 
-extern struct AMatrix AMatrix[1];
+extern struct _AMatrix AMatrix[1];
 
 
 #endif

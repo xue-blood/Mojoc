@@ -11,13 +11,13 @@
 #define TOOLKIT_H
 
 
-struct AToolkit
+struct _AToolkit
 {
     void (*Init)();
 };
 
 
-extern struct AToolkit AToolkit[1];
+extern struct _AToolkit AToolkit[1];
 
 
 #endif 

@@ -55,7 +55,7 @@ static void SetUseMapBuffer(bool isUseMapBuffer)
 }
 
 
-struct AGraphics AGraphics[1] =
+struct _AGraphics AGraphics[1] =
 {
     {
         .Init            = Init,

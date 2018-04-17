@@ -945,7 +945,7 @@ static inline void ReadAnimationDrawOrders
     int                        slotCount         = skeletonData->slotDataOrderArr->length;
 
     // collect slot index unchanged, but moved slot will push other move as whole
-    int                        unchanged[slotCount];
+	int                        *unchanged = malloc(slotCount * sizeof(int));
 
     for (int i = 0, frameIndex = 0; i < jsonDrawOrder->valueList->size; i++, frameIndex++)
     {
@@ -1017,6 +1017,8 @@ static inline void ReadAnimationDrawOrders
         {
             ALog_E("ASkeletonData ReadAnimationDrawOrders drawOrder offsets not found");
         }
+
+		free(unchanged);
 
         ASkeletonTimeline->SetDrawOrderFrame(drawOrderTimeline, frameIndex, time, drawOrderArr);
     }
@@ -1317,7 +1319,7 @@ static inline void InitAtlas(SkeletonData* skeletonData, char* atlasPath)
 
     AArrayList->InitWithCapacity(sizeof(SkeletonAttachmentData*), 20, skeletonData->attachmentDataList);
 
-    int quadCounts[skeletonData->textureAtlas->textureList->size];
+	int *quadCounts = malloc(skeletonData->textureAtlas->textureList->size * sizeof(int));
     memset(quadCounts, 0, sizeof(int) * skeletonData->textureAtlas->textureList->size);
 
     for (int i = 0; i < slotDataOrderArr->length; i++)
@@ -1394,6 +1396,8 @@ static inline void InitAtlas(SkeletonData* skeletonData, char* atlasPath)
         AArrayList->Shrink(slotData->attachmentDataList);
         AArrayList->Shrink(skeletonData->attachmentDataList);
     }
+
+	free(quadCounts);
 }
 
 
@@ -1405,7 +1409,7 @@ static SkeletonData* Get(char* filePath)
     {
         skeletonData = (SkeletonData*) malloc(sizeof(SkeletonData));
 
-        char path[strlen(filePath) + sizeof(".atlas.json")];
+        char path[MAX_PATH];
 
         sprintf(path, "%s.json",  filePath);
         Parse(skeletonData, path);
@@ -1427,7 +1431,7 @@ static SkeletonData* Get(char* filePath)
 }
 
 
-struct ASkeletonData ASkeletonData[1] =
+struct _ASkeletonData ASkeletonData[1] =
 {
     1.0f,
     Get,

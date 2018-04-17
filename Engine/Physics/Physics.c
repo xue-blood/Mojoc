@@ -17,7 +17,7 @@ static void Init()
 }
 
 
-struct APhysics APhysics[1] =
+struct _APhysics APhysics[1] =
 {
     Init
 };

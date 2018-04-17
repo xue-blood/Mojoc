@@ -237,7 +237,7 @@ static void InitWithFile(char* filePath, Sprite* outSprite)
 }
 
 
-struct ASprite ASprite[1] =
+struct _ASprite ASprite[1] =
 {
     Create,
     Init,

@@ -62,7 +62,7 @@ struct  SkeletonAnimationPlayer
 };
 
 
-struct ASkeletonAnimationPlayer
+struct _ASkeletonAnimationPlayer
 {
     SkeletonAnimationPlayer* (*Create)                     (char*                    filePath,     char* animationName);
     SkeletonAnimationPlayer* (*CreateWithData)             (SkeletonData*            skeletonData, char* animationName);
@@ -92,7 +92,7 @@ struct ASkeletonAnimationPlayer
 };
 
 
-extern struct ASkeletonAnimationPlayer ASkeletonAnimationPlayer[1];
+extern struct _ASkeletonAnimationPlayer ASkeletonAnimationPlayer[1];
 
 
 static inline SkeletonBone* ASkeletonAnimationPlayer_GetBone(SkeletonAnimationPlayer* player, char* boneName)

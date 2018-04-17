@@ -279,7 +279,7 @@ static ArrayIntMap* Create(int valueTypeSize)
 }
 
 
-struct AArrayIntMap AArrayIntMap[1] =
+struct _AArrayIntMap AArrayIntMap[1] =
 {
     Create,
     Init,

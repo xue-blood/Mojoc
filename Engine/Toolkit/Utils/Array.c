@@ -21,7 +21,7 @@ static Array* Create(int elementTypeSize, int length)
 }
 
 
-struct AArray AArray[1] =
+struct _AArray AArray[1] =
 {
     Create,
 };

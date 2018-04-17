@@ -85,7 +85,7 @@ typedef struct
 ParticleEmitterData;
 
 
-struct AParticleEmitterData
+struct _AParticleEmitterData
 {
     ParticleEmitterData* (*Create)         (char* filePath);
     void                 (*Init)           (char* filePath, ParticleEmitterData* outParticleEmitterData);
@@ -98,7 +98,7 @@ struct AParticleEmitterData
 };
 
 
-extern struct AParticleEmitterData AParticleEmitterData[1];
+extern struct _AParticleEmitterData AParticleEmitterData[1];
 
 
 #endif

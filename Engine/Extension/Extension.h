@@ -14,13 +14,13 @@
 #include "Engine/Toolkit/Toolkit.h"
 
 
-struct AExtension
+struct _AExtension
 {
     void (*Init)();
 };
 
 
-extern struct AExtension AExtension[1];
+extern struct _AExtension AExtension[1];
 
 
 #endif

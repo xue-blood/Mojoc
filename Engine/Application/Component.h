@@ -138,7 +138,7 @@ typedef void (*ComponentStateUpdate)   (Component* component, float deltaSeconds
 typedef bool (*ComponentStateOnMessage)(Component* component, void* sender, int subject, void* extraData);
 
 
-struct AComponent
+struct _AComponent
 {
     /**
      * Create new Component that allocate memory and need to free it manually
@@ -233,7 +233,7 @@ struct AComponent
 };
 
 
-extern struct AComponent AComponent[1];
+extern struct _AComponent AComponent[1];
 
 
 #endif

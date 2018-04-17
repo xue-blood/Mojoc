@@ -97,7 +97,7 @@ static void Init()
 }
 
 
-struct AShaderMesh AShaderMesh[1] =
+struct _AShaderMesh AShaderMesh[1] =
 {
     {
         .Use  = Use,

@@ -142,14 +142,14 @@ static inline SkeletonCurveType GetCurveType(SkeletonCurveTimeline* curveTimelin
 */
 
 
-static const float  subDivStep  = 1.0f        / BEZIER_SEGMENTS;
-static const float  subDivStep2 = subDivStep  * subDivStep;
-static const float  subDivStep3 = subDivStep2 * subDivStep;
-static const float  pre1        = 3           * subDivStep;
-static const float  pre2        = 3           * subDivStep2;
-static const float  pre4        = 6           * subDivStep2;
-static const float  pre5        = 6           * subDivStep3;
-static const float  subDivPre   = subDivStep3 / pre5;
+#define  subDivStep  ( 1.0f        / BEZIER_SEGMENTS)
+#define  subDivStep2 ( subDivStep  * subDivStep)
+#define  subDivStep3 ( subDivStep2 * subDivStep)
+#define  pre1        ( 3           * subDivStep)
+#define  pre2        ( 3           * subDivStep2)
+#define  pre4        ( 6           * subDivStep2)
+#define  pre5        ( 6           * subDivStep3)
+#define  subDivPre   ( subDivStep3 / pre5)
 
 
 static void SetCurve(SkeletonCurveTimeline* curveTimeline, int frameIndex, float cx1, float cy1, float cx2, float cy2)
@@ -942,7 +942,7 @@ static void DrawOrderApply(SkeletonTimeline* skeletonTimeline, Skeleton* skeleto
     }
 
     ArrayList* meshList = skeleton->meshList;
-    int        subMeshIndexCount[meshList->size];
+	int*       subMeshIndexCount = malloc(meshList->size);
 
     memset(subMeshIndexCount, 0, meshList->size * sizeof(int));
 
@@ -1005,6 +1005,8 @@ static void DrawOrderApply(SkeletonTimeline* skeletonTimeline, Skeleton* skeleto
             AArrayList_GetPtr(meshList, i, Mesh)
         );
     }
+
+	free(subMeshIndexCount);
 }
 
 
@@ -1219,7 +1221,7 @@ static SkeletonDeformTimeline* CreateDeform(int frameCount)
 }
 
 
-struct ASkeletonTimeline ASkeletonTimeline[1] =
+struct _ASkeletonTimeline ASkeletonTimeline[1] =
 {
     CreateRotate,
     CreateTranslate,

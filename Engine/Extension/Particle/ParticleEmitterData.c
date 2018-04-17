@@ -421,7 +421,7 @@ static ParticleEmitterData* Create(char* filePath)
 }
 
 
-struct AParticleEmitterData AParticleEmitterData[1] =
+struct _AParticleEmitterData AParticleEmitterData[1] =
 {
     Create,
     Init,

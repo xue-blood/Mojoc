@@ -42,7 +42,7 @@ typedef struct
 InputTouch;
 
 
-struct AInput
+struct _AInput
 {
     /**
      * The x, y in screen coordinate
@@ -57,7 +57,7 @@ struct AInput
 };
 
 
-extern struct AInput AInput[1];
+extern struct _AInput AInput[1];
 
 
 #endif

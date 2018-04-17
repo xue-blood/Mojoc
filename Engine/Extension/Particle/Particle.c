@@ -30,7 +30,7 @@ static void Init(SubMesh* subMesh, Particle* outParticle)
 }
 
 
-struct AParticle AParticle[1] =
+struct _AParticle AParticle[1] =
 {
     Init,
     Reset,

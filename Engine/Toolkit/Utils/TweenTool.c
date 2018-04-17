@@ -22,7 +22,7 @@ enum
 
 static Array(TweenAction*) actionArr[1] =
 {
-    (TweenAction*[TweenAction_Length]) {},
+    (TweenAction*[TweenAction_Length]) {0},
     0
 };
 
@@ -39,7 +39,7 @@ static TweenActionValue* actionValue = NULL;
     ALog_A(actionValue != NULL, "ATweenTool " tag " TweenActionValue can not NULL");
 
 
-static struct ATweenTool* AddAction()
+static struct _ATweenTool* AddAction()
 {
     ALog_A
     (
@@ -64,7 +64,7 @@ static struct ATweenTool* AddAction()
 }
 
 
-static inline struct ATweenTool* SetValue(TweenActionValueGetSet* valueGetSet, float value)
+static inline struct _ATweenTool* SetValue(TweenActionValueGetSet* valueGetSet, float value)
 {
     CheckAction("SetValue");
 
@@ -77,7 +77,7 @@ static inline struct ATweenTool* SetValue(TweenActionValueGetSet* valueGetSet, f
 }
 
 
-static struct ATweenTool* SetDuration(float duration)
+static struct _ATweenTool* SetDuration(float duration)
 {
     CheckAction("SetDuration");
     action->duration = duration;
@@ -86,7 +86,7 @@ static struct ATweenTool* SetDuration(float duration)
 }
 
 
-static struct ATweenTool* SetRelative(bool isRelative)
+static struct _ATweenTool* SetRelative(bool isRelative)
 {
     CheckAction     ("SetRelative");
     CheckActionValue("SetRelative");
@@ -96,7 +96,7 @@ static struct ATweenTool* SetRelative(bool isRelative)
 }
 
 
-static struct ATweenTool* SetEaseType(TweenEaseType easeType)
+static struct _ATweenTool* SetEaseType(TweenEaseType easeType)
 {
     CheckAction     ("SetEaseType");
     CheckActionValue("SetEaseType");
@@ -106,7 +106,7 @@ static struct ATweenTool* SetEaseType(TweenEaseType easeType)
 }
 
 
-static struct ATweenTool* AddInterval(float duration)
+static struct _ATweenTool* AddInterval(float duration)
 {
     AddAction();
     SetDuration(duration);
@@ -118,7 +118,7 @@ static struct ATweenTool* AddInterval(float duration)
 //----------------------------------------------------------------------------------------------------------------------
 
 
-static struct ATweenTool* AddMoveX(float moveX, float duration)
+static struct _ATweenTool* AddMoveX(float moveX, float duration)
 {
     AddAction();
     SetValue(ATweenActionValueGetSetImpl->moveX, moveX);
@@ -128,7 +128,7 @@ static struct ATweenTool* AddMoveX(float moveX, float duration)
 }
 
 
-static struct ATweenTool* AddMoveY(float moveY, float duration)
+static struct _ATweenTool* AddMoveY(float moveY, float duration)
 {
     AddAction();
     SetValue(ATweenActionValueGetSetImpl->moveY, moveY);
@@ -138,7 +138,7 @@ static struct ATweenTool* AddMoveY(float moveY, float duration)
 }
 
 
-static struct ATweenTool* AddMove2(float moveX, float moveY, float duration, bool isRelative, TweenEaseType easeType)
+static struct _ATweenTool* AddMove2(float moveX, float moveY, float duration, bool isRelative, TweenEaseType easeType)
 {
     AddAction  ();
 
@@ -156,13 +156,13 @@ static struct ATweenTool* AddMove2(float moveX, float moveY, float duration, boo
 }
 
 
-static struct ATweenTool* AddMoveSame2(float move, float duration, bool  isRelative, TweenEaseType easeType)
+static struct _ATweenTool* AddMoveSame2(float move, float duration, bool  isRelative, TweenEaseType easeType)
 {
     return AddMove2(move, move, duration, isRelative, easeType);
 }
 
 
-static struct ATweenTool* AddScaleX(float scaleX, float duration)
+static struct _ATweenTool* AddScaleX(float scaleX, float duration)
 {
     AddAction();
 
@@ -173,7 +173,7 @@ static struct ATweenTool* AddScaleX(float scaleX, float duration)
 }
 
 
-static struct ATweenTool* AddScaleY(float scaleY, float duration)
+static struct _ATweenTool* AddScaleY(float scaleY, float duration)
 {
     AddAction();
 
@@ -184,7 +184,7 @@ static struct ATweenTool* AddScaleY(float scaleY, float duration)
 }
 
 
-static struct ATweenTool* AddScale2(float scaleX, float scaleY, float duration, bool isRelative, TweenEaseType easeType)
+static struct _ATweenTool* AddScale2(float scaleX, float scaleY, float duration, bool isRelative, TweenEaseType easeType)
 {
     AddAction  ();
 
@@ -202,13 +202,13 @@ static struct ATweenTool* AddScale2(float scaleX, float scaleY, float duration, 
 }
 
 
-static struct ATweenTool* AddScaleSame2(float scale, float duration, bool  isRelative, TweenEaseType  easeType)
+static struct _ATweenTool* AddScaleSame2(float scale, float duration, bool  isRelative, TweenEaseType  easeType)
 {
     return AddScale2(scale, scale, duration, isRelative, easeType);
 }
 
 
-static struct ATweenTool* AddRotateZ(float rotateZ, float duration)
+static struct _ATweenTool* AddRotateZ(float rotateZ, float duration)
 {
     AddAction();
 
@@ -219,7 +219,7 @@ static struct ATweenTool* AddRotateZ(float rotateZ, float duration)
 }
 
 
-static struct ATweenTool* AddFadeTo(float fadeTo, float duration)
+static struct _ATweenTool* AddFadeTo(float fadeTo, float duration)
 {
     AddAction();
 
@@ -233,7 +233,7 @@ static struct ATweenTool* AddFadeTo(float fadeTo, float duration)
 //----------------------------------------------------------------------------------------------------------------------
 
 
-static struct ATweenTool* SetUserData0Int(int userData)
+static struct _ATweenTool* SetUserData0Int(int userData)
 {
     CheckAction("SetUserData0Int");
     action->userData->slot0->intValue = userData;
@@ -241,7 +241,7 @@ static struct ATweenTool* SetUserData0Int(int userData)
 }
 
 
-static struct ATweenTool* SetUserData0Float(float userData)
+static struct _ATweenTool* SetUserData0Float(float userData)
 {
     CheckAction("SetUserData0Float");
     action->userData->slot0->floatValue = userData;
@@ -249,7 +249,7 @@ static struct ATweenTool* SetUserData0Float(float userData)
 }
 
 
-static struct ATweenTool* SetUserData0Ptr(void* userData)
+static struct _ATweenTool* SetUserData0Ptr(void* userData)
 {
     CheckAction("SetUserData0Ptr");
     action->userData->slot0->ptrValue = userData;
@@ -257,7 +257,7 @@ static struct ATweenTool* SetUserData0Ptr(void* userData)
 }
 
 
-static struct ATweenTool* SetUserData0String(char* userData)
+static struct _ATweenTool* SetUserData0String(char* userData)
 {
     CheckAction("SetUserData0String");
     action->userData->slot0->stringValue= userData;
@@ -265,7 +265,7 @@ static struct ATweenTool* SetUserData0String(char* userData)
 }
 
 
-static struct ATweenTool* SetUserData1Int(int userData)
+static struct _ATweenTool* SetUserData1Int(int userData)
 {
     CheckAction("SetUserData1Int");
     action->userData->slot1->intValue = userData;
@@ -273,7 +273,7 @@ static struct ATweenTool* SetUserData1Int(int userData)
 }
 
 
-static struct ATweenTool* SetUserData1Float(float userData)
+static struct _ATweenTool* SetUserData1Float(float userData)
 {
     CheckAction("SetUserData1Float");
     action->userData->slot1->floatValue = userData;
@@ -281,7 +281,7 @@ static struct ATweenTool* SetUserData1Float(float userData)
 }
 
 
-static struct ATweenTool* SetUserData1Ptr(void* userData)
+static struct _ATweenTool* SetUserData1Ptr(void* userData)
 {
     CheckAction("SetUserData1Ptr");
     action->userData->slot1->ptrValue = userData;
@@ -289,7 +289,7 @@ static struct ATweenTool* SetUserData1Ptr(void* userData)
 }
 
 
-static struct ATweenTool* SetUserData1String(char* userData)
+static struct _ATweenTool* SetUserData1String(char* userData)
 {
     CheckAction("SetUserData1String");
     action->userData->slot1->stringValue= userData;
@@ -297,7 +297,7 @@ static struct ATweenTool* SetUserData1String(char* userData)
 }
 
 
-static struct ATweenTool* SetUserData2Int(int userData)
+static struct _ATweenTool* SetUserData2Int(int userData)
 {
     CheckAction("SetUserData2Int");
     action->userData->slot2->intValue = userData;
@@ -305,7 +305,7 @@ static struct ATweenTool* SetUserData2Int(int userData)
 }
 
 
-static struct ATweenTool* SetUserData2Float(float userData)
+static struct _ATweenTool* SetUserData2Float(float userData)
 {
     CheckAction("SetUserData2Float");
     action->userData->slot2->floatValue = userData;
@@ -313,7 +313,7 @@ static struct ATweenTool* SetUserData2Float(float userData)
 }
 
 
-static struct ATweenTool* SetUserData2Ptr(void* userData)
+static struct _ATweenTool* SetUserData2Ptr(void* userData)
 {
     CheckAction("SetUserData2Ptr");
     action->userData->slot2->ptrValue = userData;
@@ -321,7 +321,7 @@ static struct ATweenTool* SetUserData2Ptr(void* userData)
 }
 
 
-static struct ATweenTool* SetUserData2String(char* userData)
+static struct _ATweenTool* SetUserData2String(char* userData)
 {
     CheckAction("SetUserData2String");
     action->userData->slot2->stringValue= userData;
@@ -329,7 +329,7 @@ static struct ATweenTool* SetUserData2String(char* userData)
 }
 
 
-static struct ATweenTool* SetUserData3Int(int userData)
+static struct _ATweenTool* SetUserData3Int(int userData)
 {
     CheckAction("SetUserData3Int");
     action->userData->slot3->intValue = userData;
@@ -337,7 +337,7 @@ static struct ATweenTool* SetUserData3Int(int userData)
 }
 
 
-static struct ATweenTool* SetUserData3Float(float userData)
+static struct _ATweenTool* SetUserData3Float(float userData)
 {
     CheckAction("SetUserData3Float");
     action->userData->slot3->floatValue = userData;
@@ -345,7 +345,7 @@ static struct ATweenTool* SetUserData3Float(float userData)
 }
 
 
-static struct ATweenTool* SetUserData3Ptr(void* userData)
+static struct _ATweenTool* SetUserData3Ptr(void* userData)
 {
     CheckAction("SetUserData3Ptr");
     action->userData->slot3->ptrValue = userData;
@@ -353,7 +353,7 @@ static struct ATweenTool* SetUserData3Ptr(void* userData)
 }
 
 
-static struct ATweenTool* SetUserData3String(char* userData)
+static struct _ATweenTool* SetUserData3String(char* userData)
 {
     CheckAction("SetUserData3String");
     action->userData->slot3->stringValue= userData;
@@ -361,7 +361,7 @@ static struct ATweenTool* SetUserData3String(char* userData)
 }
 
 
-static struct ATweenTool* SetQueue(bool isQueue)
+static struct _ATweenTool* SetQueue(bool isQueue)
 {
     CheckAction("SetQueue");
     action->isQueue = isQueue;
@@ -370,7 +370,7 @@ static struct ATweenTool* SetQueue(bool isQueue)
 }
 
 
-static struct ATweenTool* SetOnComplete(TweenActionOnComplete OnComplete)
+static struct _ATweenTool* SetOnComplete(TweenActionOnComplete OnComplete)
 {
     CheckAction("SetOnComplete");
     action->OnComplete = OnComplete;
@@ -379,7 +379,7 @@ static struct ATweenTool* SetOnComplete(TweenActionOnComplete OnComplete)
 }
 
 
-static struct ATweenTool* SetTarget(void* target)
+static struct _ATweenTool* SetTarget(void* target)
 {
     CheckAction("SetTarget");
     action->target = target;
@@ -388,7 +388,7 @@ static struct ATweenTool* SetTarget(void* target)
 }
 
 
-static struct ATweenTool* GetAction(TweenAction** outActionPtr)
+static struct _ATweenTool* GetAction(TweenAction** outActionPtr)
 {
     CheckAction("GetAction");
     *outActionPtr = action;
@@ -400,19 +400,19 @@ static struct ATweenTool* GetAction(TweenAction** outActionPtr)
 //----------------------------------------------------------------------------------------------------------------------
 
 
-static struct ATweenTool* SetMoveX(float moveX)
+static struct _ATweenTool* SetMoveX(float moveX)
 {
     return SetValue(ATweenActionValueGetSetImpl->moveX, moveX);
 }
 
 
-static struct ATweenTool* SetMoveY(float moveY)
+static struct _ATweenTool* SetMoveY(float moveY)
 {
     return SetValue(ATweenActionValueGetSetImpl->moveY, moveY);
 }
 
 
-struct ATweenTool* SetMove2(float moveX, float moveY, bool isRelative, TweenEaseType easeType)
+struct _ATweenTool* SetMove2(float moveX, float moveY, bool isRelative, TweenEaseType easeType)
 {
     SetValue   (ATweenActionValueGetSetImpl->moveX, moveX);
     SetRelative(isRelative);
@@ -426,25 +426,25 @@ struct ATweenTool* SetMove2(float moveX, float moveY, bool isRelative, TweenEase
 }
 
 
-struct ATweenTool* SetMoveSame2(float move, bool isRelative, TweenEaseType easeType)
+struct _ATweenTool* SetMoveSame2(float move, bool isRelative, TweenEaseType easeType)
 {
     return SetMove2(move, move, isRelative, easeType);
 }
 
 
-static struct ATweenTool* SetScaleX(float scaleX)
+static struct _ATweenTool* SetScaleX(float scaleX)
 {
     return SetValue(ATweenActionValueGetSetImpl->scaleX, scaleX);
 }
 
 
-static struct ATweenTool* SetScaleY(float scaleY)
+static struct _ATweenTool* SetScaleY(float scaleY)
 {
     return SetValue(ATweenActionValueGetSetImpl->scaleY, scaleY);
 }
 
 
-struct ATweenTool* SetScale2(float scaleX, float scaleY, bool isRelative, TweenEaseType easeType)
+struct _ATweenTool* SetScale2(float scaleX, float scaleY, bool isRelative, TweenEaseType easeType)
 {
     SetValue   (ATweenActionValueGetSetImpl->scaleX, scaleX);
     SetRelative(isRelative);
@@ -458,19 +458,19 @@ struct ATweenTool* SetScale2(float scaleX, float scaleY, bool isRelative, TweenE
 }
 
 
-struct ATweenTool* SetScaleSame2(float scale, bool isRelative, TweenEaseType easeType)
+struct _ATweenTool* SetScaleSame2(float scale, bool isRelative, TweenEaseType easeType)
 {
     return SetScale2(scale, scale, isRelative, easeType);
 }
 
 
-static struct ATweenTool* SetRotateZ(float rotateZ)
+static struct _ATweenTool* SetRotateZ(float rotateZ)
 {
     return SetValue(ATweenActionValueGetSetImpl->rotateZ, rotateZ);
 }
 
 
-static struct ATweenTool* SetFadeTo(float fadeTo)
+static struct _ATweenTool* SetFadeTo(float fadeTo)
 {
     return SetValue(ATweenActionValueGetSetImpl->fadeTo, fadeTo);
 }
@@ -529,7 +529,7 @@ static void* RunTargets()
 }
 
 
-struct ATweenTool ATweenTool[1] =
+struct _ATweenTool ATweenTool[1] =
 {
     AddAction,
     AddInterval,

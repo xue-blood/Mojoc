@@ -115,7 +115,13 @@ static char* CreateDataFromDir(char* relativeDirFilePath, int* outLength)
         len = (int) strlen(dir);
     }
 
-    char path[len + strlen(relativeDirFilePath) + 2];
+	char *path = malloc(len + strlen(relativeDirFilePath) + 2);
+	if (path == NULL)
+	{
+		*outLength = 0;
+		return NULL;
+	}
+
     sprintf(path, "%s/%s", dir, relativeDirFilePath);
 
     FILE* f = fopen(path, "rb");
@@ -132,10 +138,13 @@ static char* CreateDataFromDir(char* relativeDirFilePath, int* outLength)
         fread (data, length, 1, f);
         fclose(f);
 
+		free(path);
+
         return data;
     }
     else
     {
+		free(path);
         *outLength = 0;
         return NULL;
     }
@@ -152,16 +161,18 @@ static void WriteDataToDir(char* relativeDirFilePath, void* data, int length)
         len = (int) strlen(dir);
     }
 
-    char path[len + strlen(relativeDirFilePath) + 2];
+	char *path = malloc(len + strlen(relativeDirFilePath) + 2);
     sprintf(path, "%s/%s", dir, relativeDirFilePath);
 
     FILE* f = fopen(path, "wb");
     fwrite(data, length, 1, f);
     fclose(f);
+	
+	free(path);
 }
 
 
-struct AFileTool AFileTool[1] =
+struct _AFileTool AFileTool[1] =
 {
     GetDirLength,
     CreateDataFrom,

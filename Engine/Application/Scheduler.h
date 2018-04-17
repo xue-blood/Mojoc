@@ -47,7 +47,7 @@ struct  Scheduler
 typedef void (*SchedulerUpdate)(Scheduler* scheduler, float deltaSeconds);
 
 
-struct AScheduler
+struct _AScheduler
 {
     /**
      * Scheduler to be scheduled by intervalTime
@@ -66,7 +66,7 @@ struct AScheduler
 };
 
 
-extern struct AScheduler AScheduler[1];
+extern struct _AScheduler AScheduler[1];
 
 
 #endif

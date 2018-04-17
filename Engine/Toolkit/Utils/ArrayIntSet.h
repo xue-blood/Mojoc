@@ -26,7 +26,7 @@ typedef struct
 ArrayIntSet;
 
 
-struct AArrayIntSet
+struct _AArrayIntSet
 {
     ArrayIntSet* (*Create)            ();
     void         (*Init)              (ArrayIntSet* outArrayIntSet);
@@ -63,7 +63,7 @@ struct AArrayIntSet
 };
 
 
-extern struct AArrayIntSet AArrayIntSet[1];
+extern struct _AArrayIntSet AArrayIntSet[1];
 
 
 /**

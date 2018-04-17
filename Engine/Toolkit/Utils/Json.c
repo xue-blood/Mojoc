@@ -661,7 +661,7 @@ static JsonValue* ParseWithFile(char* jsonPath)
 }
 
 
-struct AJson AJson[1] =
+struct _AJson AJson[1] =
 {
     Parse,
     ParseWithFile,

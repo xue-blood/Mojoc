@@ -259,7 +259,7 @@ typedef struct
 SkeletonData;
 
 
-struct ASkeletonData
+struct _ASkeletonData
 {
     /**
      * Scales the bones, images, and animations as they are loaded, default 1.0
@@ -275,7 +275,7 @@ struct ASkeletonData
 };
 
 
-extern struct ASkeletonData ASkeletonData[1];
+extern struct _ASkeletonData ASkeletonData[1];
 
 
 #endif

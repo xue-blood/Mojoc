@@ -14,13 +14,13 @@
 #include "Engine/Toolkit/Toolkit.h"
 
 
-struct APhysics
+struct _APhysics
 {
     void (*Init)();
 };
 
 
-extern struct APhysics APhysics[1];
+extern struct _APhysics APhysics[1];
 
 
 #endif

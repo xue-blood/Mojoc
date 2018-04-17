@@ -48,7 +48,7 @@ static Texture* Get(char* filePath)
 }
 
 
-struct ATexture ATexture[1] =
+struct _ATexture ATexture[1] =
 {
     Get,
     Release,

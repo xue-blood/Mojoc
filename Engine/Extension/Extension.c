@@ -15,7 +15,7 @@ static void Init()
 }
 
 
-struct AExtension AExtension[1] =
+struct _AExtension AExtension[1] =
 {
     Init,
 };

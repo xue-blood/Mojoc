@@ -114,7 +114,7 @@ static void UpdateMotion2D(PhysicsBody* body, float deltaSeconds)
 }
 
 
-struct APhysicsBody APhysicsBody[1] =
+struct _APhysicsBody APhysicsBody[1] =
 {
     Create,
     UpdateMotion2D,

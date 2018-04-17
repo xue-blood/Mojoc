@@ -17,13 +17,13 @@
 /**
  * Record current using shader info
  */
-struct AShader
+struct _AShader
 {
     GLuint program;
 };
 
 
-extern struct AShader AShader[1];
+extern struct _AShader AShader[1];
 
 
 #endif

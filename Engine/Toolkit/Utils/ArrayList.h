@@ -41,7 +41,7 @@ typedef struct
 ArrayList;
 
 
-struct AArrayList
+struct _AArrayList
 {
     ArrayList* (*Create)            (int elementTypeSize);
     void       (*Init)              (int elementTypeSize, ArrayList* outArrayList);
@@ -137,7 +137,7 @@ struct AArrayList
 };
 
 
-extern struct AArrayList AArrayList[1];
+extern struct _AArrayList AArrayList[1];
 
 
 /**

@@ -93,7 +93,7 @@ static void Init()
 }
 
 
-struct AShaderSprite AShaderSprite[1] =
+struct _AShaderSprite AShaderSprite[1] =
 {
     {
         .Use  = Use,

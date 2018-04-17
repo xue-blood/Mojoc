@@ -9,11 +9,12 @@
 
 #include <stdbool.h>
 #include <setjmp.h>
+#include <png.h>
 
 #include "Engine/Graphics/Utils/Image.h"
 #include "Engine/Toolkit/Platform/File.h"
 #include "Engine/Toolkit/Platform/Log.h"
-#include "Engine/ThirdParty/PNG/Include/Android/png.h"
+
 
 
 /**
@@ -160,7 +161,7 @@ static void* CreatePixelDataFromPNG(char* filePath, float* outWidth, float* outH
 
         for (int pass = 0; pass < numberPasses; pass++)
         {
-            for (int row = 0; row < pngHeight; row++)
+            for (int row = 0; row < (int)pngHeight; row++)
             {
                png_read_row(pngPtr, ((unsigned char*)pixelData + (row * rowBytes)), NULL);
             }
@@ -182,7 +183,7 @@ static void* CreatePixelDataFromPNG(char* filePath, float* outWidth, float* outH
 }
 
 
-struct AImage AImage[1] =
+struct _AImage AImage[1] =
 {
     CreatePixelDataFromPNG,
 };

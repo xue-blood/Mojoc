@@ -273,7 +273,7 @@ static bool TestCollision(PhysicsBody* bodyA, PhysicsBody* bodyB)
 }
 
 
-struct APhysicsCollision APhysicsCollision[1] =
+struct _APhysicsCollision APhysicsCollision[1] =
 {
     TestCollision,
 };

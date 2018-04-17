@@ -17,7 +17,7 @@
 #include "Engine/Graphics/Draw/Color.h"
 
 
-struct AShaderPrimitive
+struct _AShaderPrimitive
 {
     GLuint program;
     GLint  attribPosition;
@@ -30,7 +30,7 @@ struct AShaderPrimitive
 };
 
 
-extern struct AShaderPrimitive AShaderPrimitive[1];
+extern struct _AShaderPrimitive AShaderPrimitive[1];
 
 
 #endif

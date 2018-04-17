@@ -53,7 +53,7 @@ static void Init(char* filePath, TextureAtlas* outTextureAtlas)
 
         int  fileDirLen = AFileTool->GetDirLength(filePath);
         int  pathLen    = fileDirLen + (line->end - line->start);
-        char path[pathLen + 1];
+        char path[MAX_PATH];
 
         path[pathLen] = '\0';
 
@@ -172,7 +172,7 @@ static TextureAtlas* Get(char* filePath)
 }
 
 
-struct ATextureAtlas ATextureAtlas[1] =
+struct _ATextureAtlas ATextureAtlas[1] =
 {
     Get,
     Release,

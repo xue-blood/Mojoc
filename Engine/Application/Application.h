@@ -79,7 +79,7 @@ ApplicationCallbacks;
 //----------------------------------------------------------------------------------------------------------------------
 
 
-struct AApplication
+struct _AApplication
 {
     /**
      * Root Component when OnReady can add child on
@@ -144,7 +144,7 @@ struct AApplication
 };
 
 
-extern struct AApplication AApplication[1];
+extern struct _AApplication AApplication[1];
 
 
 /**

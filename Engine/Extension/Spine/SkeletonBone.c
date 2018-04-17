@@ -38,7 +38,7 @@ static SkeletonBone* Create(SkeletonBoneData* boneData)
 }
 
 
-struct ASkeletonBone ASkeletonBone[1] =
+struct _ASkeletonBone ASkeletonBone[1] =
 {
     Create,
     Init,

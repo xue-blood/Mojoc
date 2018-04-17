@@ -175,7 +175,7 @@ static bool TryFindString(char* buffer, ArrayRange* range, char* str)
 }
 
 
-struct ABufferReader ABufferReader[1] =
+struct _ABufferReader ABufferReader[1] =
 {
     ReadInt64,
     ReadInt32,

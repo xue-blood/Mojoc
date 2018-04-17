@@ -55,14 +55,14 @@ typedef struct
 TextureAtlasQuad;
 
 
-struct ATextureAtlas
+struct _ATextureAtlas
 {
     TextureAtlas* (*Get)    (char*         filePath);
     void          (*Release)(TextureAtlas* textureAtlas);
 };
 
 
-extern struct ATextureAtlas ATextureAtlas[1];
+extern struct _ATextureAtlas ATextureAtlas[1];
 
 
 static TextureAtlasQuad* ATextureAtlas_GetQuad(TextureAtlas* atlas, char* quadName)

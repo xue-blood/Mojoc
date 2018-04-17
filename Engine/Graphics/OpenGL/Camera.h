@@ -15,7 +15,7 @@
 #include "Engine/Toolkit/Math/Math.h"
 
 
-struct ACamera
+struct _ACamera
 {
     float left;
     float right;
@@ -78,7 +78,7 @@ struct ACamera
 };
 
 
-extern struct ACamera ACamera[1];
+extern struct _ACamera ACamera[1];
 
 
 #endif

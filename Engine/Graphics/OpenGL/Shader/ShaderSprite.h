@@ -17,7 +17,7 @@
 #include "Engine/Graphics/Draw/Color.h"
 
 
-struct AShaderSprite
+struct _AShaderSprite
 {
     GLuint program;
     GLuint attribPositionTexcoord;
@@ -30,7 +30,7 @@ struct AShaderSprite
 };
 
 
-extern struct AShaderSprite AShaderSprite[1];
+extern struct _AShaderSprite AShaderSprite[1];
 
 
 #endif

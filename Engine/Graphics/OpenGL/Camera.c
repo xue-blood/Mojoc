@@ -78,7 +78,7 @@ static float GetFarZOrder()
 }
 
 
-struct ACamera ACamera[1] =
+struct _ACamera ACamera[1] =
 {
     0, 0, 0,
 

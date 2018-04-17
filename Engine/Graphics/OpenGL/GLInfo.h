@@ -16,7 +16,7 @@
 #include "Engine/Toolkit/Head/Define.h"
 
 
-struct AGLInfo
+struct _AGLInfo
 {
     GLfloat pointSizeRange[2];
     GLfloat lineWidthRange[2];
@@ -35,7 +35,7 @@ struct AGLInfo
 };
 
 
-extern struct AGLInfo AGLInfo[1];
+extern struct _AGLInfo AGLInfo[1];
 
 
 #endif

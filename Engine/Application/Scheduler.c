@@ -84,7 +84,7 @@ static void Update(float deltaSeconds)
 }
 
 
-struct AScheduler AScheduler[1] =
+struct _AScheduler AScheduler[1] =
 {
     Schedule,
     ScheduleOnce,

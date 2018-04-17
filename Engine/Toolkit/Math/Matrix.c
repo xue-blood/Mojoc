@@ -768,7 +768,7 @@ static void LookAt
 }
 
 
-struct AMatrix AMatrix[1] =
+struct _AMatrix AMatrix[1] =
 {
     MultiplyMM,
     MultiplyMMM,

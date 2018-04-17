@@ -45,7 +45,7 @@ Texture;
 /**
  * Cache all texture with filePath as key
  */
-struct ATexture
+struct _ATexture
 {
     /**
      * Get Texture by filePath, not found will create one
@@ -60,7 +60,7 @@ struct ATexture
 };
 
 
-extern struct ATexture ATexture[1];
+extern struct _ATexture ATexture[1];
 
 
 #endif

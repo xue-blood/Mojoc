@@ -29,7 +29,7 @@ typedef struct
 ArrayQueue;
 
 
-struct AArrayQueue
+struct _AArrayQueue
 {
     ArrayQueue* (*Create)            (int elementTypeSize);
     void        (*Init)              (int elementTypeSize, ArrayQueue* outArrayQueue);
@@ -66,7 +66,7 @@ struct AArrayQueue
 };
 
 
-extern struct AArrayQueue AArrayQueue[1];
+extern struct _AArrayQueue AArrayQueue[1];
 
 
 /**

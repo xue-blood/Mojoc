@@ -119,7 +119,7 @@ static void ReuseQuad(DrawAtlas* drawAtlas, Drawable* drawable)
 }
 
 
-struct ADrawAtlas ADrawAtlas[1] =
+struct _ADrawAtlas ADrawAtlas[1] =
 {
     Get,
     GetQuad,

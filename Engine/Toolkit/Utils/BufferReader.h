@@ -16,7 +16,7 @@
 #include "Engine/Toolkit/Head/ArrayRange.h"
 
 
-struct ABufferReader
+struct _ABufferReader
 {
     /**
      * Read long from buffer data, where ArrayRange in buffer
@@ -52,7 +52,7 @@ struct ABufferReader
 };
 
 
-extern struct ABufferReader ABufferReader[1];
+extern struct _ABufferReader ABufferReader[1];
 
 
 #endif

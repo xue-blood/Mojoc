@@ -15,13 +15,13 @@
 #include "Engine/Physics/PhysicsBody.h"
 
 
-struct APhysicsCollision
+struct _APhysicsCollision
 {
     bool (*TestCollision)(PhysicsBody* bodyA, PhysicsBody* bodyB);
 };
 
 
-extern struct APhysicsCollision APhysicsCollision[1];
+extern struct _APhysicsCollision APhysicsCollision[1];
 
 
 #endif 

@@ -439,7 +439,7 @@ static Skeleton* Create(SkeletonData* skeletonData)
 }
 
 
-struct ASkeleton ASkeleton[1] =
+struct _ASkeleton ASkeleton[1] =
 {
     Create,
     Init,

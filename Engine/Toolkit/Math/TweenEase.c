@@ -434,7 +434,7 @@ static float BounceInOut(float from, float to, float time)
 #undef VALUE
 
 
-struct ATweenEase ATweenEase[1] =
+struct _ATweenEase ATweenEase[1] =
 {
     Linear,
 

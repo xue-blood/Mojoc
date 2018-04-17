@@ -696,7 +696,7 @@ static void Clear(Mesh* mesh)
 }
 
 
-struct AMesh AMesh[1] =
+struct _AMesh AMesh[1] =
 {
     Create,
     Init,

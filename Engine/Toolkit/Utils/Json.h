@@ -132,7 +132,7 @@ struct AJsonArray
 extern struct AJsonArray AJsonArray[1];
 
 
-struct AJson
+struct _AJson
 {
     /**
      * Parse with Json string, return root JsonValue
@@ -152,7 +152,7 @@ struct AJson
 };
 
 
-extern struct AJson AJson[1];
+extern struct _AJson AJson[1];
 
 
 #endif

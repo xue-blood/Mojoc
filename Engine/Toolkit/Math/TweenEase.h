@@ -112,7 +112,7 @@ typedef enum
 TweenEaseType;
 
 
-struct ATweenEase
+struct _ATweenEase
 {
     /**
      * Ease interpolation algorithm function
@@ -122,7 +122,7 @@ struct ATweenEase
 };
 
 
-extern struct ATweenEase ATweenEase[1];
+extern struct _ATweenEase ATweenEase[1];
 
 
 #endif

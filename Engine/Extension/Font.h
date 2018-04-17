@@ -78,7 +78,7 @@ typedef struct
 FontText;
 
 
-struct AFont
+struct _AFont
 {
     Font*     (*Get)           (char* filePath);
     FontText* (*GetText)       (Font* font);
@@ -101,7 +101,7 @@ struct AFont
 };
 
 
-extern struct AFont AFont[1];
+extern struct _AFont AFont[1];
 
 
 #endif

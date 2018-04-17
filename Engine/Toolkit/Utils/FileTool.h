@@ -15,7 +15,7 @@
 #include <stdio.h>
 
 
-struct AFileTool
+struct _AFileTool
 {
     /**
      * Get file directory length in file path string, include last slash '/' or '\\'
@@ -98,7 +98,7 @@ struct AFileTool
 };
 
 
-extern struct AFileTool AFileTool[1];
+extern struct _AFileTool AFileTool[1];
 
 
 #endif

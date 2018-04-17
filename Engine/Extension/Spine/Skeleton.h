@@ -44,7 +44,7 @@ struct  Skeleton
 };
 
 
-struct ASkeleton
+struct _ASkeleton
 {
     Skeleton*               (*Create)              (SkeletonData* skeletonData);
     void                    (*Init)                (SkeletonData* skeletonData, Skeleton* outSkeleton);
@@ -85,7 +85,7 @@ struct ASkeleton
 };
 
 
-extern struct ASkeleton ASkeleton[1];
+extern struct _ASkeleton ASkeleton[1];
 
 
 static inline void ASkeleton_Draw(Skeleton* skeleton)

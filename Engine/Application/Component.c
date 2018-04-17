@@ -340,7 +340,7 @@ static void Update(Component* component, float deltaSeconds)
 }
 
 
-struct AComponent AComponent[1] =
+struct _AComponent AComponent[1] =
 {
     Create,
     Init,

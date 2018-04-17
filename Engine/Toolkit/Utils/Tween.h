@@ -103,7 +103,7 @@ struct TweenAction
 };
 
 
-struct ATween
+struct _ATween
 {
     /**
      * Control by ATween when action complete
@@ -161,7 +161,7 @@ struct ATween
 };
 
 
-extern struct ATween ATween[1];
+extern struct _ATween ATween[1];
 
 
 #endif

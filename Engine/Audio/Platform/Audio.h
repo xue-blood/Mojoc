@@ -15,7 +15,7 @@
 
 
 typedef struct AudioPlayer AudioPlayer;
-struct AAudio
+struct _AAudio
 {
     /**
      * Init audio engine
@@ -59,7 +59,7 @@ struct AAudio
 };
 
 
-extern struct AAudio AAudio[1];
+extern struct _AAudio AAudio[1];
 
 
 #endif

@@ -35,7 +35,7 @@ typedef struct
 DrawAtlas;
 
 
-struct ADrawAtlas
+struct _ADrawAtlas
 {
     DrawAtlas* (*Get)          (char*       filePath);
     Drawable*  (*GetQuad)      (DrawAtlas*  drawAtlas, char*     quadName);
@@ -52,7 +52,7 @@ struct ADrawAtlas
 };
 
 
-extern struct ADrawAtlas ADrawAtlas[1];
+extern struct _ADrawAtlas ADrawAtlas[1];
 
 
 static inline void ADrawAtlas_Draw(DrawAtlas* drawAtlas)

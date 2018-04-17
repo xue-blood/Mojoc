@@ -39,7 +39,7 @@ static InputTouch* GetTouch(int fingerId)
 }
 
 
-struct AInput AInput[1] =
+struct _AInput AInput[1] =
 {
     SetTouch,
     GetTouch,

@@ -203,7 +203,7 @@ static void InitSlotBoundingBoxDrawable(SkeletonAnimationPlayer* player, char* s
 }
 
 
-struct ASkeletonAnimationPlayer ASkeletonAnimationPlayer[1] =
+struct _ASkeletonAnimationPlayer ASkeletonAnimationPlayer[1] =
 {
     Create,
     CreateWithData,

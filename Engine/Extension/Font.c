@@ -341,7 +341,7 @@ static void ReuseText(FontText* text)
 }
 
 
-struct AFont AFont[1] =
+struct _AFont AFont[1] =
 {
     Get,
     GetText,

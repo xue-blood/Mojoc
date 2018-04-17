@@ -21,7 +21,7 @@ typedef struct
 Color;
 
 
-struct AColor
+struct _AColor
 {
     /**
      * String format 000000 - ffffffff
@@ -30,7 +30,7 @@ struct AColor
 };
 
 
-extern struct AColor AColor[1];
+extern struct _AColor AColor[1];
 
 
 #define COLOR_WHITE {1.0f, 1.0f, 1.0f, 1.0f}
