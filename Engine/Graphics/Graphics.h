@@ -18,17 +18,6 @@ struct _AGraphics
 {
     /**
      * Default false
-     */
-    bool isUseVBO;
-
-    /**
-     * Default false
-     * setting by method SetUseVAO
-     */
-    bool isUseVAO;
-
-    /**
-     * Default false
      * setting by method SetUseMapBuffer
      */
     bool isUseMapBuffer;
@@ -37,12 +26,6 @@ struct _AGraphics
      * Initialize graphics each modules
      */
     void (*Init)           ();
-
-    /**
-     * If VAO not support nothing changed
-     * if use VAO also use VBO
-     */
-    void (*SetUseVAO)      (bool isUseVAO);
 
     /**
      * If glMapBufferRange not support will use glBufferSubData

@@ -118,14 +118,11 @@ static void SetWithQuad(SubMesh* subMesh, Texture* texture, Quad* quad)
         uvDataLen
     );
 
-    if (AGraphics->isUseVBO)
-    {
-        VBOSubData* subData = AArrayList_GetPtrAdd(mesh->vboSubDataList, VBOSubData);
-        subData->target     = GL_ARRAY_BUFFER;
-        subData->offset     = mesh->uvDataOffset + subMesh->uvDataOffset;
-        subData->length     = uvDataLen;
-        subData->data       = subMesh->uvArr->data;
-    }
+	VBOSubData* subData = AArrayList_GetPtrAdd(mesh->vboSubDataList, VBOSubData);
+	subData->target = GL_ARRAY_BUFFER;
+	subData->offset = mesh->uvDataOffset + subMesh->uvDataOffset;
+	subData->length = uvDataLen;
+	subData->data = subMesh->uvArr->data;
 }
 
 

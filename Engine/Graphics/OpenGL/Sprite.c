@@ -26,50 +26,11 @@ static void Render(Drawable* drawable)
 
 //----------------------------------------------------------------------------------------------------------------------
 
-    if (AGraphics->isUseVAO)
-    {
-        glBindVertexArray(sprite->vaoId);
-        glDrawElements(GL_TRIANGLES, sprite->indexCount, GL_UNSIGNED_SHORT, 0);
-        // clear VAO bind
-        glBindVertexArray(0);
-    }
-    else if (AGraphics->isUseVBO)
-    {
-        glBindBuffer(GL_ARRAY_BUFFER,         sprite->vboIds[MeshBuffer_Vertex]);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sprite->vboIds[MeshBuffer_Index]);
+	glBindVertexArray(sprite->vaoId);
+	glDrawElements(GL_TRIANGLES, sprite->indexCount, GL_UNSIGNED_SHORT, 0);
+	// clear VAO bind
+	glBindVertexArray(0);
 
-        // load the position and texture coordinate
-        glVertexAttribPointer
-        (
-            AShaderSprite->attribPositionTexcoord,
-            MeshVertex_Size,
-            GL_FLOAT,
-            false,
-            MeshVertex_VertexStride,
-            0
-        );
-
-        glDrawElements(GL_TRIANGLES, sprite->indexCount, GL_UNSIGNED_SHORT, 0);
-
-        // clear VBO bind
-        glBindBuffer(GL_ARRAY_BUFFER,         0);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-    }
-    else
-    {
-        // load the position and texture coordinate
-        glVertexAttribPointer
-        (
-            AShaderSprite->attribPositionTexcoord,
-            MeshVertex_Size,
-            GL_FLOAT,
-            false,
-            MeshVertex_VertexStride,
-            sprite->vertexArr->data
-        );
-
-        glDrawElements(GL_TRIANGLES, sprite->indexCount, GL_UNSIGNED_SHORT, sprite->indexArr->data);
-    }
 }
 
 
@@ -82,18 +43,12 @@ static void Release(Sprite* sprite)
     sprite->vertexArr = NULL;
     sprite->texture   = NULL;
 
-    if (AGraphics->isUseVBO)
-    {
-        glDeleteBuffers(MeshBuffer_Num, sprite->vboIds);
-        sprite->vboIds[MeshBuffer_Vertex] = 0;
-        sprite->vboIds[MeshBuffer_Index]  = 0;
+	glDeleteBuffers(MeshBuffer_Num, sprite->vboIds);
+	sprite->vboIds[MeshBuffer_Vertex] = 0;
+	sprite->vboIds[MeshBuffer_Index] = 0;
 
-        if (AGraphics->isUseVAO)
-        {
-            glDeleteVertexArrays(1, &sprite->vaoId);
-            sprite->vaoId = 0;
-        }
-    }
+	glDeleteVertexArrays(1, &sprite->vaoId);
+	sprite->vaoId = 0;
 }
 
 
@@ -124,57 +79,51 @@ static inline void InitSprite(Sprite* sprite, Texture* texture, Array(Quad)* qua
         AQuad->GetQuadIndex (i * 4, (short*) sprite->indexArr->data + i * Quad_IndexNum);
     }
 
-    if (AGraphics->isUseVBO)
-    {
-        if (sprite->vboIds[MeshBuffer_Vertex] == 0)
-        {
-            glGenBuffers(MeshBuffer_Num, sprite->vboIds);
-        }
+	if (sprite->vboIds[MeshBuffer_Vertex] == 0)
+	{
+		glGenBuffers(MeshBuffer_Num, sprite->vboIds);
+	}
 
-        // vertex
-        glBindBuffer(GL_ARRAY_BUFFER, sprite->vboIds[MeshBuffer_Vertex]);
-        glBufferData(GL_ARRAY_BUFFER, sprite->vertexArr->length * sizeof(float), sprite->vertexArr->data, GL_DYNAMIC_DRAW);
+	// vertex
+	glBindBuffer(GL_ARRAY_BUFFER, sprite->vboIds[MeshBuffer_Vertex]);
+	glBufferData(GL_ARRAY_BUFFER, sprite->vertexArr->length * sizeof(float), sprite->vertexArr->data, GL_DYNAMIC_DRAW);
 
-        // index
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sprite->vboIds[MeshBuffer_Index]);
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, sprite->indexArr->length * sizeof(short), sprite->indexArr->data, GL_STATIC_DRAW);
+	// index
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sprite->vboIds[MeshBuffer_Index]);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sprite->indexArr->length * sizeof(short), sprite->indexArr->data, GL_STATIC_DRAW);
 
-//----------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------------------------------------------------------------------------------
 
-        if (AGraphics->isUseVAO)
-        {
-            if (sprite->vaoId == 0)
-            {
-                glGenVertexArrays(1, &sprite->vaoId);
-            }
+	if (sprite->vaoId == 0)
+	{
+		glGenVertexArrays(1, &sprite->vaoId);
+	}
 
-            glBindVertexArray(sprite->vaoId);
+	glBindVertexArray(sprite->vaoId);
 
-/*
-------------------------------------------------------------------------------------------------------------------------
-    with vao has own state
---------------------------------------------------------------------------------------------------
-*/
+	/*
+	------------------------------------------------------------------------------------------------------------------------
+	with vao has own state
+	--------------------------------------------------------------------------------------------------
+	*/
 
-            glBindBuffer(GL_ARRAY_BUFFER,         sprite->vboIds[MeshBuffer_Vertex]);
-            glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sprite->vboIds[MeshBuffer_Index]);
-            glEnableVertexAttribArray(AShaderSprite->attribPositionTexcoord);
+	glBindBuffer(GL_ARRAY_BUFFER, sprite->vboIds[MeshBuffer_Vertex]);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sprite->vboIds[MeshBuffer_Index]);
+	glEnableVertexAttribArray(AShaderSprite->attribPositionTexcoord);
 
-            // load the position and texture coordinate
-            glVertexAttribPointer
-            (
-                AShaderSprite->attribPositionTexcoord,
-                MeshVertex_Size,
-                GL_FLOAT,
-                false,
-                MeshVertex_VertexStride,
-                0
-            );
+	// load the position and texture coordinate
+	glVertexAttribPointer
+		(
+		AShaderSprite->attribPositionTexcoord,
+		MeshVertex_Size,
+		GL_FLOAT,
+		false,
+		MeshVertex_VertexStride,
+		0
+		);
 
-            // go back to normal state
-            glBindVertexArray(0);
-        }
-    }
+	// go back to normal state
+	glBindVertexArray(0);
 }
 
 
