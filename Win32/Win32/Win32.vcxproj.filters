@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\ToolKit">
+      <UniqueIdentifier>{b31169d2-092a-48fa-b981-699ca016d66b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ToolKit">
+      <UniqueIdentifier>{2c2cb330-72a6-442e-89f2-3d5f3388ac50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ToolKit\Platform">
+      <UniqueIdentifier>{48cae248-f153-48c3-abae-28e7926d0235}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ToolKit\Platform">
+      <UniqueIdentifier>{ef7257ba-3d00-4837-8509-4bef807c4e0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ToolKit\Head">
+      <UniqueIdentifier>{9823095b-e09a-4439-89fd-5355c2f5ae99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics">
+      <UniqueIdentifier>{cb7ce83a-3e62-4bd5-9197-efb26dcc1132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics\OpenGL">
+      <UniqueIdentifier>{b10c78f0-6778-4a8b-a2f1-e2b69f6631fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics\OpenGL\Platform">
+      <UniqueIdentifier>{3193e52e-9da2-460d-b6cf-8634b8c066e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Application">
+      <UniqueIdentifier>{2e1cea9c-1764-40bc-ada8-102dad74b83a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Application">
+      <UniqueIdentifier>{a6f1dc6d-fe90-46a6-be93-fb4cfea888fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Application\Platform">
+      <UniqueIdentifier>{7931a054-3a6b-48b2-8dd8-0568f3a8cac1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Application\Platform\Win32">
+      <UniqueIdentifier>{80b53f2c-22e2-478d-bab2-62340259c4e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ToolKit\Platform\Win32">
+      <UniqueIdentifier>{a8f33dee-c5d3-4c1d-88c3-26f036ecbc01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ToolKit\Math">
+      <UniqueIdentifier>{4c8d923c-0a9e-45db-9598-7d880038fd59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ToolKit\Math">
+      <UniqueIdentifier>{6eaefb90-5cd5-4800-992c-fadffdc8cf28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics">
+      <UniqueIdentifier>{9f031b0a-67ec-4919-bb4c-da699641c5fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\OpenGL">
+      <UniqueIdentifier>{8396269d-ba77-4851-8f52-b332c646a98d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\OpenGL\Platform">
+      <UniqueIdentifier>{9296d58d-955e-48c0-9bde-6ecbcb219a00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ToolKit\Utils">
+      <UniqueIdentifier>{1cc421b6-5312-41c5-87eb-02579bed8be6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ToolKit\Utils">
+      <UniqueIdentifier>{48efd5e8-4695-483c-9105-599f0a9ca2ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\Tween">
+      <UniqueIdentifier>{80adf406-01da-403b-9462-babb70c77ece}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Physics">
+      <UniqueIdentifier>{8634f5cc-3096-4b34-a5d9-145e9be4d138}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Extension">
+      <UniqueIdentifier>{2b6c1578-0bc9-4979-8a4c-942594cb284a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Extension\Particle">
+      <UniqueIdentifier>{d51bf3b0-1e3f-404f-8611-d7411f8f1297}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Extension\Spine">
+      <UniqueIdentifier>{31efd875-755d-48de-bf21-ffb145c6277f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Audio">
+      <UniqueIdentifier>{376cda1a-0858-439d-b7a8-c1721187906f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Physics">
+      <UniqueIdentifier>{83f3b98e-4242-410e-b023-38852085503d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics\Draw">
+      <UniqueIdentifier>{a2d47cc0-173e-4e5e-b72a-f6f5893c77ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\Draw">
+      <UniqueIdentifier>{9d37f671-ef16-4a06-acb7-8ae74e188b79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics\OpenGL\Shader">
+      <UniqueIdentifier>{3251c9bc-2b81-4c17-b8d8-64fbc8a28b5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\Utils">
+      <UniqueIdentifier>{0d0fc08a-b8c6-40c8-9b00-509227653a28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics\Utils">
+      <UniqueIdentifier>{dd55fddf-1303-4201-be86-8ff768877b9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Extension">
+      <UniqueIdentifier>{bf823758-505e-4108-93e4-ebe11d1705bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Extension\Particle">
+      <UniqueIdentifier>{3da2bd22-f289-412c-9f73-c185a2fe792f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Extension\Spine">
+      <UniqueIdentifier>{7e2f3775-cba8-489c-8cc3-b06d0736966f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\OpenGL\Shader">
+      <UniqueIdentifier>{2b73b060-0ad9-4d2e-939d-c720cefdc49c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Extension\Audio">
+      <UniqueIdentifier>{0595f0c5-3617-4e23-9212-6507e55c0405}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Engine\Application\Application.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Application\Component.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Application\Input.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Application\Scheduler.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Platform\File.h">
+      <Filter>Header Files\ToolKit\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Platform\Log.h">
+      <Filter>Header Files\ToolKit\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Platform\Platform.h">
+      <Filter>Header Files\ToolKit\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Head\ArrayRange.h">
+      <Filter>Header Files\ToolKit\Head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Head\Bitwise.h">
+      <Filter>Header Files\ToolKit\Head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Head\Define.h">
+      <Filter>Header Files\ToolKit\Head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Head\Rect.h">
+      <Filter>Header Files\ToolKit\Head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Head\String.h">
+      <Filter>Header Files\ToolKit\Head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Head\Struct.h">
+      <Filter>Header Files\ToolKit\Head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Head\UserData.h">
+      <Filter>Header Files\ToolKit\Head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Platform\egl.h">
+      <Filter>Header Files\Graphics\OpenGL\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Platform\EGLTool.h">
+      <Filter>Header Files\Graphics\OpenGL\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Platform\gl3.h">
+      <Filter>Header Files\Graphics\OpenGL\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Math\Math.h">
+      <Filter>Header Files\ToolKit\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Math\Matrix.h">
+      <Filter>Header Files\ToolKit\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Math\TweenEase.h">
+      <Filter>Header Files\ToolKit\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Math\Vector.h">
+      <Filter>Header Files\ToolKit\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Toolkit.h">
+      <Filter>Header Files\ToolKit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\Array.h">
+      <Filter>Header Files\ToolKit\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\ArrayIntMap.h">
+      <Filter>Header Files\ToolKit\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\ArrayIntSet.h">
+      <Filter>Header Files\ToolKit\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\ArrayList.h">
+      <Filter>Header Files\ToolKit\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\ArrayQueue.h">
+      <Filter>Header Files\ToolKit\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\ArrayStrMap.h">
+      <Filter>Header Files\ToolKit\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\BufferReader.h">
+      <Filter>Header Files\ToolKit\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\Coroutine.h">
+      <Filter>Header Files\ToolKit\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\FileTool.h">
+      <Filter>Header Files\ToolKit\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\Json.h">
+      <Filter>Header Files\ToolKit\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\Tween.h">
+      <Filter>Header Files\ToolKit\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\TweenTool.h">
+      <Filter>Header Files\ToolKit\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Audio\Platform\Audio.h">
+      <Filter>Header Files\Extension\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Physics\Physics.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Physics\PhysicsBody.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Physics\PhysicsCollision.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Physics\PhysicsConfig.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Physics\PhysicsWorld.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Extension\Particle\Particle.h">
+      <Filter>Header Files\Extension\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Extension\Particle\ParticleEmitter.h">
+      <Filter>Header Files\Extension\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Extension\Particle\ParticleEmitterData.h">
+      <Filter>Header Files\Extension\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Extension\Spine\Skeleton.h">
+      <Filter>Header Files\Extension\Spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Extension\Spine\SkeletonAnimationPlayer.h">
+      <Filter>Header Files\Extension\Spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Extension\Spine\SkeletonBone.h">
+      <Filter>Header Files\Extension\Spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Extension\Spine\SkeletonData.h">
+      <Filter>Header Files\Extension\Spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Extension\Spine\SkeletonSlot.h">
+      <Filter>Header Files\Extension\Spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Extension\Spine\SkeletonTimeline.h">
+      <Filter>Header Files\Extension\Spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Extension\DrawAtlas.h">
+      <Filter>Header Files\Extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Extension\Extension.h">
+      <Filter>Header Files\Extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Extension\Font.h">
+      <Filter>Header Files\Extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Extension\TextureAtlas.h">
+      <Filter>Header Files\Extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\Draw\Color.h">
+      <Filter>Header Files\Graphics\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\Draw\Drawable.h">
+      <Filter>Header Files\Graphics\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\Draw\Quad.h">
+      <Filter>Header Files\Graphics\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Camera.h">
+      <Filter>Header Files\Graphics\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\GLInfo.h">
+      <Filter>Header Files\Graphics\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\GLPrimitive.h">
+      <Filter>Header Files\Graphics\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\GLTool.h">
+      <Filter>Header Files\Graphics\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Mesh.h">
+      <Filter>Header Files\Graphics\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\MeshDefine.h">
+      <Filter>Header Files\Graphics\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Sprite.h">
+      <Filter>Header Files\Graphics\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\SubMesh.h">
+      <Filter>Header Files\Graphics\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Texture.h">
+      <Filter>Header Files\Graphics\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Shader\Shader.h">
+      <Filter>Header Files\Graphics\OpenGL\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Shader\ShaderMesh.h">
+      <Filter>Header Files\Graphics\OpenGL\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Shader\ShaderPrimitive.h">
+      <Filter>Header Files\Graphics\OpenGL\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Shader\ShaderSprite.h">
+      <Filter>Header Files\Graphics\OpenGL\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\Utils\Image.h">
+      <Filter>Header Files\Graphics\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Graphics\Graphics.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Engine\Toolkit\Math\Math.c">
+      <Filter>Source Files\ToolKit\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Toolkit\Math\Matrix.c">
+      <Filter>Source Files\ToolKit\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Toolkit\Math\TweenEase.c">
+      <Filter>Source Files\ToolKit\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\ThirdParty\glad\glad.c">
+      <Filter>Source Files\Graphics\OpenGL\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\Array.c">
+      <Filter>Source Files\ToolKit\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\ArrayIntMap.c">
+      <Filter>Source Files\ToolKit\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\ArrayIntSet.c">
+      <Filter>Source Files\ToolKit\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\ArrayList.c">
+      <Filter>Source Files\ToolKit\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\ArrayQueue.c">
+      <Filter>Source Files\ToolKit\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\ArrayStrMap.c">
+      <Filter>Source Files\ToolKit\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\BufferReader.c">
+      <Filter>Source Files\ToolKit\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\Coroutine.c">
+      <Filter>Source Files\ToolKit\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\FileTool.c">
+      <Filter>Source Files\ToolKit\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\Json.c">
+      <Filter>Source Files\ToolKit\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\Tween.c">
+      <Filter>Source Files\ToolKit\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\TweenTool.c">
+      <Filter>Source Files\ToolKit\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Toolkit\Toolkit.c">
+      <Filter>Source Files\ToolKit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Toolkit\Platform\Win32\File.c">
+      <Filter>Source Files\ToolKit\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\Tween\TweenDrawable.c">
+      <Filter>Source Files\Graphics\Tween</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Application\Platform\Win32\Win32.c">
+      <Filter>Source Files\Application\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Application\Application.c">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Application\Component.c">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Application\Input.c">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Application\Scheduler.c">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Audio\Platform\Win32\Audio.c">
+      <Filter>Source Files\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Physics\Physics.c">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Physics\PhysicsBody.c">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Physics\PhysicsCollision.c">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Physics\PhysicsWorld.c">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\Draw\Color.c">
+      <Filter>Source Files\Graphics\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\Draw\Drawable.c">
+      <Filter>Source Files\Graphics\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\Draw\Quad.c">
+      <Filter>Source Files\Graphics\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\Texture.c">
+      <Filter>Source Files\Graphics\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\SubMesh.c">
+      <Filter>Source Files\Graphics\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\Sprite.c">
+      <Filter>Source Files\Graphics\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\Mesh.c">
+      <Filter>Source Files\Graphics\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\GLTool.c">
+      <Filter>Source Files\Graphics\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\GLPrimitive.c">
+      <Filter>Source Files\Graphics\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\GLInfo.c">
+      <Filter>Source Files\Graphics\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\Camera.c">
+      <Filter>Source Files\Graphics\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\Utils\Image.c">
+      <Filter>Source Files\Graphics\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Extension\TextureAtlas.c">
+      <Filter>Source Files\Extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Extension\Font.c">
+      <Filter>Source Files\Extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Extension\Extension.c">
+      <Filter>Source Files\Extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Extension\DrawAtlas.c">
+      <Filter>Source Files\Extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Extension\Particle\Particle.c">
+      <Filter>Source Files\Extension\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Extension\Particle\ParticleEmitter.c">
+      <Filter>Source Files\Extension\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Extension\Particle\ParticleEmitterData.c">
+      <Filter>Source Files\Extension\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\Graphics.c">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\Shader\Shader.c">
+      <Filter>Source Files\Graphics\OpenGL\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\Shader\ShaderMesh.c">
+      <Filter>Source Files\Graphics\OpenGL\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\Shader\ShaderPrimitive.c">
+      <Filter>Source Files\Graphics\OpenGL\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\Shader\ShaderSprite.c">
+      <Filter>Source Files\Graphics\OpenGL\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Toolkit\Platform\Win32\Log.c">
+      <Filter>Source Files\ToolKit\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Extension\Spine\SkeletonTimeline.c">
+      <Filter>Source Files\Extension\Spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Extension\Spine\SkeletonSlot.c">
+      <Filter>Source Files\Extension\Spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Extension\Spine\SkeletonData.c">
+      <Filter>Source Files\Extension\Spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Extension\Spine\SkeletonBone.c">
+      <Filter>Source Files\Extension\Spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Extension\Spine\SkeletonAnimationPlayer.c">
+      <Filter>Source Files\Extension\Spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Extension\Spine\Skeleton.c">
+      <Filter>Source Files\Extension\Spine</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

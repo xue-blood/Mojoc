@@ -23,8 +23,13 @@
 
 
 static const char* saveDataFileName = "MojocSaveDataFile";
+#ifndef IS_PLATFORM_WIN32
 static struct      timespec now;
 static struct      timespec last;
+#else
+static double      now;
+static double      last;
+#endif
 
 
 static void Init()
@@ -41,12 +46,12 @@ static void Init()
 
     // check callback setting
     ALog_A(AApplication->callbacks->OnReady             != NULL, "AApplication->callbacks->OnReady             must be set");
-    ALog_A(AApplication->callbacks->OnPause             != NULL, "AApplication->callbacks->OnPause             must be set");
-    ALog_A(AApplication->callbacks->OnResume            != NULL, "AApplication->callbacks->OnResume            must be set");
+//    ALog_A(AApplication->callbacks->OnPause             != NULL, "AApplication->callbacks->OnPause             must be set");
+//    ALog_A(AApplication->callbacks->OnResume            != NULL, "AApplication->callbacks->OnResume            must be set");
     ALog_A(AApplication->callbacks->OnDestroy           != NULL, "AApplication->callbacks->OnDestroy           must be set");
-    ALog_A(AApplication->callbacks->OnResized           != NULL, "AApplication->callbacks->OnResized           must be set");
-    ALog_A(AApplication->callbacks->OnSaveData          != NULL, "AApplication->callbacks->OnSaveData          must be set");
-    ALog_A(AApplication->callbacks->OnInitWithSavedData != NULL, "AApplication->callbacks->OnInitWithSavedData must be set");
+//    ALog_A(AApplication->callbacks->OnResized           != NULL, "AApplication->callbacks->OnResized           must be set");
+//    ALog_A(AApplication->callbacks->OnSaveData          != NULL, "AApplication->callbacks->OnSaveData          must be set");
+//    ALog_A(AApplication->callbacks->OnInitWithSavedData != NULL, "AApplication->callbacks->OnInitWithSavedData must be set");
 
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -62,14 +67,23 @@ static void Init()
 //----------------------------------------------------------------------------------------------------------------------
 
     // start clock
+#ifndef IS_PLATFORM_WIN32
     clock_gettime(CLOCK_MONOTONIC, &last);
+#else
+	last = glfwGetTime();
+#endif
 }
 
 
 static void Loop()
 {
-    clock_gettime(CLOCK_MONOTONIC, &now);
-    float deltaSeconds = (now.tv_nsec - last.tv_nsec) * 0.000000001 + (now.tv_sec - last.tv_sec);
+#ifndef IS_PLATFORM_WIN32
+	clock_gettime(CLOCK_MONOTONIC, &now);
+	float deltaSeconds = (now.tv_nsec - last.tv_nsec) * 0.000000001 + (now.tv_sec - last.tv_sec);
+#else
+	now = glfwGetTime();
+	float deltaSeconds = (float)(now - last);
+#endif
     last               =  now;
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -96,7 +110,8 @@ static void Resized(int width, int height)
     glViewport(0, 0, width, height);
 
     AGLTool     ->SetSize             (width, height);
-    AApplication->callbacks->OnResized(width, height);
+	if (AApplication->callbacks->OnResized != NULL)
+		AApplication->callbacks->OnResized(width, height);
 }
 
 
@@ -118,7 +133,11 @@ static void Resume()
 {
     AApplication->callbacks->OnResume();
     // restart clock
-    clock_gettime(CLOCK_MONOTONIC, &last);
+#ifndef IS_PLATFORM_WIN32
+	clock_gettime(CLOCK_MONOTONIC, &last);
+#else
+	last = glfwGetTime();
+#endif
 }
 
 
@@ -151,7 +170,7 @@ static void SaveData()
 }
 
 
-struct AApplication AApplication[1] =
+struct _AApplication AApplication[1] =
 {
     {
         .callbacks =

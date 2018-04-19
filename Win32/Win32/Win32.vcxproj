@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6D41D22B-9231-49D0-A9F7-E2FD7D8992EA}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Win32</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)../;$(SolutionDir)../Engine/ThirdParty;C:\Program Files (x86)\OpenAL 1.1 SDK\include;C:\Program Files (x86)\GnuWin32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)../Engine/ThirdParty/GLFW;C:\Program Files (x86)\OpenAL 1.1 SDK\libs\Win32;C:\Program Files (x86)\GnuWin32\lib;$(LibraryPath)</LibraryPath>
+    <TargetName>mojoc</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)../;$(SolutionDir)../Engine/ThirdParty;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)../Engine/ThirdParty/GLFW;$(LibraryPath)</LibraryPath>
+    <TargetName>mojoc</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ShowIncludes>false</ShowIncludes>
+      <DisableSpecificWarnings>4996;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4996;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Engine\Application\Application.h" />
+    <ClInclude Include="..\..\Engine\Application\Component.h" />
+    <ClInclude Include="..\..\Engine\Application\Input.h" />
+    <ClInclude Include="..\..\Engine\Application\Scheduler.h" />
+    <ClInclude Include="..\..\Engine\Audio\Platform\Audio.h" />
+    <ClInclude Include="..\..\Engine\Extension\DrawAtlas.h" />
+    <ClInclude Include="..\..\Engine\Extension\Extension.h" />
+    <ClInclude Include="..\..\Engine\Extension\Font.h" />
+    <ClInclude Include="..\..\Engine\Extension\Particle\Particle.h" />
+    <ClInclude Include="..\..\Engine\Extension\Particle\ParticleEmitter.h" />
+    <ClInclude Include="..\..\Engine\Extension\Particle\ParticleEmitterData.h" />
+    <ClInclude Include="..\..\Engine\Extension\Spine\Skeleton.h" />
+    <ClInclude Include="..\..\Engine\Extension\Spine\SkeletonAnimationPlayer.h" />
+    <ClInclude Include="..\..\Engine\Extension\Spine\SkeletonBone.h" />
+    <ClInclude Include="..\..\Engine\Extension\Spine\SkeletonData.h" />
+    <ClInclude Include="..\..\Engine\Extension\Spine\SkeletonSlot.h" />
+    <ClInclude Include="..\..\Engine\Extension\Spine\SkeletonTimeline.h" />
+    <ClInclude Include="..\..\Engine\Extension\TextureAtlas.h" />
+    <ClInclude Include="..\..\Engine\Graphics\Draw\Color.h" />
+    <ClInclude Include="..\..\Engine\Graphics\Draw\Drawable.h" />
+    <ClInclude Include="..\..\Engine\Graphics\Draw\Quad.h" />
+    <ClInclude Include="..\..\Engine\Graphics\Graphics.h" />
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Camera.h" />
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\GLInfo.h" />
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\GLPrimitive.h" />
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\GLTool.h" />
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Mesh.h" />
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\MeshDefine.h" />
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Platform\egl.h" />
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Platform\EGLTool.h" />
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Platform\gl3.h" />
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Shader\Shader.h" />
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Shader\ShaderMesh.h" />
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Shader\ShaderPrimitive.h" />
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Shader\ShaderSprite.h" />
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Sprite.h" />
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\SubMesh.h" />
+    <ClInclude Include="..\..\Engine\Graphics\OpenGL\Texture.h" />
+    <ClInclude Include="..\..\Engine\Graphics\Utils\Image.h" />
+    <ClInclude Include="..\..\Engine\Physics\Physics.h" />
+    <ClInclude Include="..\..\Engine\Physics\PhysicsBody.h" />
+    <ClInclude Include="..\..\Engine\Physics\PhysicsCollision.h" />
+    <ClInclude Include="..\..\Engine\Physics\PhysicsConfig.h" />
+    <ClInclude Include="..\..\Engine\Physics\PhysicsWorld.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Head\ArrayRange.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Head\Bitwise.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Head\Define.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Head\Rect.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Head\String.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Head\Struct.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Head\UserData.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Math\Math.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Math\Matrix.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Math\TweenEase.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Math\Vector.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Platform\File.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Platform\Log.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Platform\Platform.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Toolkit.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\Array.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\ArrayIntMap.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\ArrayIntSet.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\ArrayList.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\ArrayQueue.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\ArrayStrMap.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\BufferReader.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\Coroutine.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\FileTool.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\Json.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\Tween.h" />
+    <ClInclude Include="..\..\Engine\Toolkit\Utils\TweenTool.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Engine\Application\Application.c" />
+    <ClCompile Include="..\..\Engine\Application\Component.c" />
+    <ClCompile Include="..\..\Engine\Application\Input.c" />
+    <ClCompile Include="..\..\Engine\Application\Platform\Win32\Win32.c" />
+    <ClCompile Include="..\..\Engine\Application\Scheduler.c" />
+    <ClCompile Include="..\..\Engine\Audio\Platform\Win32\Audio.c" />
+    <ClCompile Include="..\..\Engine\Extension\DrawAtlas.c" />
+    <ClCompile Include="..\..\Engine\Extension\Extension.c" />
+    <ClCompile Include="..\..\Engine\Extension\Font.c" />
+    <ClCompile Include="..\..\Engine\Extension\Particle\Particle.c" />
+    <ClCompile Include="..\..\Engine\Extension\Particle\ParticleEmitter.c" />
+    <ClCompile Include="..\..\Engine\Extension\Particle\ParticleEmitterData.c" />
+    <ClCompile Include="..\..\Engine\Extension\Spine\Skeleton.c" />
+    <ClCompile Include="..\..\Engine\Extension\Spine\SkeletonAnimationPlayer.c" />
+    <ClCompile Include="..\..\Engine\Extension\Spine\SkeletonBone.c" />
+    <ClCompile Include="..\..\Engine\Extension\Spine\SkeletonData.c" />
+    <ClCompile Include="..\..\Engine\Extension\Spine\SkeletonSlot.c" />
+    <ClCompile Include="..\..\Engine\Extension\Spine\SkeletonTimeline.c" />
+    <ClCompile Include="..\..\Engine\Extension\TextureAtlas.c" />
+    <ClCompile Include="..\..\Engine\Graphics\Draw\Color.c" />
+    <ClCompile Include="..\..\Engine\Graphics\Draw\Drawable.c" />
+    <ClCompile Include="..\..\Engine\Graphics\Draw\Quad.c" />
+    <ClCompile Include="..\..\Engine\Graphics\Graphics.c" />
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\Camera.c" />
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\GLInfo.c" />
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\GLPrimitive.c" />
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\GLTool.c" />
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\Mesh.c" />
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\Shader\Shader.c" />
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\Shader\ShaderMesh.c" />
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\Shader\ShaderPrimitive.c" />
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\Shader\ShaderSprite.c" />
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\Sprite.c" />
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\SubMesh.c" />
+    <ClCompile Include="..\..\Engine\Graphics\OpenGL\Texture.c" />
+    <ClCompile Include="..\..\Engine\Graphics\Tween\TweenDrawable.c" />
+    <ClCompile Include="..\..\Engine\Graphics\Utils\Image.c" />
+    <ClCompile Include="..\..\Engine\Physics\Physics.c" />
+    <ClCompile Include="..\..\Engine\Physics\PhysicsBody.c" />
+    <ClCompile Include="..\..\Engine\Physics\PhysicsCollision.c" />
+    <ClCompile Include="..\..\Engine\Physics\PhysicsWorld.c" />
+    <ClCompile Include="..\..\Engine\ThirdParty\glad\glad.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Math\Math.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Math\Matrix.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Math\TweenEase.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Platform\Win32\File.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Platform\Win32\Log.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Toolkit.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\Array.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\ArrayIntMap.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\ArrayIntSet.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\ArrayList.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\ArrayQueue.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\ArrayStrMap.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\BufferReader.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\Coroutine.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\FileTool.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\Json.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\Tween.c" />
+    <ClCompile Include="..\..\Engine\Toolkit\Utils\TweenTool.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

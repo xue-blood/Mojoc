@@ -942,9 +942,7 @@ static void DrawOrderApply(SkeletonTimeline* skeletonTimeline, Skeleton* skeleto
     }
 
     ArrayList* meshList = skeleton->meshList;
-	int*       subMeshIndexCount = malloc(meshList->size);
-
-    memset(subMeshIndexCount, 0, meshList->size * sizeof(int));
+	int       subMeshIndexCount[10] = { 0 };
 
     Array(int)*    drawOrderArr = AArray_Get(drawOrderTimeline->drawOrderArr, frameIndex, Array(int)*);
     SkeletonSlot*  slots        = AArray_GetData(skeleton->slotArr,      SkeletonSlot);
@@ -1005,8 +1003,6 @@ static void DrawOrderApply(SkeletonTimeline* skeletonTimeline, Skeleton* skeleto
             AArrayList_GetPtr(meshList, i, Mesh)
         );
     }
-
-	free(subMeshIndexCount);
 }
 
 
