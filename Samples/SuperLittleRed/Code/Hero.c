@@ -265,8 +265,8 @@ static inline bool OnReadyMessage(Component* component, void* sender, int subjec
             {
                 if (arrow != NULL && AHero->roundEnergy >= AGameData->arrowCostEnergy)
                 {
-                    float deltaX = touchDownX - touch->x;
-                    float deltaY = touchDownY - touch->y;
+					float deltaX = touch->x - touchDownX;
+					float deltaY = touch->y - touchDownY;
 
                     ADrawable_SetRotationZ
                     (
