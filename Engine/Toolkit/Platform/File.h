@@ -20,7 +20,12 @@
  * Android: assets   files
  * IOS:     NSBundle files
  */
+#ifdef IS_PLATFORM_WIN32
+#include <stdio.h>
+typedef FILE File;
+#else
 typedef struct File File;
+#endif
 
 
 struct _AFile

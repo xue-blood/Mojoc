@@ -150,6 +150,18 @@ GLuint LoadProgramByFile(char* vertexShaderPath, char* fragmentShaderPath)
     return program;
 }
 
+static void SetupTexture(void* pixels, float width, float height, void* extra){
+	ALog_A(pixels != NULL, "AGLTool SetupTexture failed, no pixels data");
+	ALog_A(extra != NULL, "AGLTool SetupTexture failed, no extra data");
+
+	Texture* tex = extra;
+
+	// load the data into the bound outTexture
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, (GLsizei)width, (GLsizei)height, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+
+	tex->width = AGLTool_ToGLWidth(width);
+	tex->height = AGLTool_ToGLHeight(height);
+}
 
 static void LoadTexture(char* filePath, Texture* outTexture)
 {
@@ -173,20 +185,8 @@ static void LoadTexture(char* filePath, Texture* outTexture)
      glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,     GL_CLAMP_TO_EDGE);
      glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,     GL_CLAMP_TO_EDGE);
 
-
-     float width;
-     float height;
-
-     void* pixels = AImage->CreatePixelDataFromPNG(filePath, &width, &height);
-     ALog_A(pixels != NULL, "AGLTool LoadTexture failed, no pixels data");
-
-     // load the data into the bound outTexture
-     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, (GLsizei) width, (GLsizei) height, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
-
-     outTexture->width  = AGLTool_ToGLWidth (width);
-     outTexture->height = AGLTool_ToGLHeight(height);
-
-     free(pixels);
+	 bool isOk = AImage->CreatePixelDataFromPNG(filePath, SetupTexture, outTexture);
+	 ALog_A(isOk, "AGLTool LoadTexture failed, no pixels data");
 }
 
 

@@ -26,10 +26,19 @@ static void ReadPNGData(png_structp pngPtr, png_bytep data, png_size_t length)
 }
 
 
-static void* CreatePixelDataFromPNG(char* filePath, float* outWidth, float* outHeight)
+static bool CreatePixelDataFromPNG(char* filePath, ImageCallback callback,void* param)
 {
+	ALog_A(callback != NULL, "CreatePixelDataFromPNG ImageCallback can't be NULL");
+
     void* pixelData = NULL;
     File* file      = NULL;
+
+	png_uint_32 pngWidth = 0;
+	png_uint_32 pngHeight = 0;
+
+	png_structp pngPtr = NULL;
+	png_infop infoPtr = NULL;
+	png_infop endInfo = NULL;
 
     do
     {
@@ -48,7 +57,7 @@ static void* CreatePixelDataFromPNG(char* filePath, float* outWidth, float* outH
         // you can supply NULL for the last three parameters.  We also supply the
         // the compiler header file version, so that we know if the application
         // was compiled with a compatible version of the library.  REQUIRED
-        png_structp pngPtr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
+        pngPtr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
         if (!pngPtr)
         {
             ALog_E("AImage CreatePixelDataFromPNG unable to create PNG structure: %s", filePath);
@@ -56,8 +65,7 @@ static void* CreatePixelDataFromPNG(char* filePath, float* outWidth, float* outH
         }
 
         // allocate/initialize the memory for image information.  REQUIRED
-        png_infop infoPtr = png_create_info_struct(pngPtr);
-
+        infoPtr = png_create_info_struct(pngPtr);
         if (infoPtr == NULL)
         {
             png_destroy_read_struct(&pngPtr, NULL, NULL);
@@ -65,7 +73,7 @@ static void* CreatePixelDataFromPNG(char* filePath, float* outWidth, float* outH
             break;
         }
 
-        png_infop endInfo = png_create_info_struct(pngPtr);
+        endInfo = png_create_info_struct(pngPtr);
         if (endInfo == NULL)
         {
             png_destroy_read_struct(&pngPtr, &infoPtr, NULL);
@@ -99,14 +107,11 @@ static void* CreatePixelDataFromPNG(char* filePath, float* outWidth, float* outH
         // note that png_get_IHDR() returns 32-bit data into
         // the application's outWidth and outHeight variables
         // This is an unsafe situation if these are 16-bit variables
-        png_uint_32 pngWidth  = png_get_image_width (pngPtr, infoPtr);
-        png_uint_32 pngHeight = png_get_image_height(pngPtr, infoPtr);
+        pngWidth  = png_get_image_width (pngPtr, infoPtr);
+        pngHeight = png_get_image_height(pngPtr, infoPtr);
 
         int         bitDepth  = png_get_bit_depth (pngPtr, infoPtr);
         int         colorType = png_get_color_type(pngPtr, infoPtr);
-
-        *outWidth             = (float) pngWidth;
-        *outHeight            = (float) pngHeight;
 
         // force palette images to be expanded to 24-bit RGB
         // it may include alpha channel
@@ -170,21 +175,26 @@ static void* CreatePixelDataFromPNG(char* filePath, float* outWidth, float* outH
         // read rest of file, and get additional chunks in info_ptr - REQUIRED
         png_read_end(pngPtr, infoPtr);
 
-        // at this point you have read the entire image
-        // clean up after the read, and free any memory allocated - REQUIRE
-        png_destroy_read_struct(&pngPtr, &infoPtr, &endInfo);
-
+		callback(pixelData, pngWidth, pngHeight, param);
     }
     while (false);
 
     AFile->Close(file);
 
-    return pixelData;
-}
+	if (pixelData == NULL){
+		return false;
+	}
 
+	png_free(pngPtr, pixelData);
+
+	// at this point you have read the entire image
+	// clean up after the read, and free any memory allocated - REQUIRE
+	png_destroy_read_struct(&pngPtr, &infoPtr, &endInfo);
+	return true;
+}
 
 struct _AImage AImage[1] =
 {
-    CreatePixelDataFromPNG,
+	CreatePixelDataFromPNG
 };
 

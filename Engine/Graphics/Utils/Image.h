@@ -13,6 +13,7 @@
 
 #include "Engine/Toolkit/Head/Define.h"
 
+typedef void(*ImageCallback)(void* pixel, float width, float height, void* extra);
 
 struct _AImage
 {
@@ -21,7 +22,7 @@ struct _AImage
      *
      * return NULL when error happened
      */
-     void* (*CreatePixelDataFromPNG)(char* filePath, float* outWidth, float* outHeight);
+     bool (*CreatePixelDataFromPNG)(char* filePath, ImageCallback callback,void* param);
 };
 
 
