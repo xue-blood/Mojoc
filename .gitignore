@@ -3,3 +3,16 @@
 
 # Tmp
 .DS_Store
+
+**/Debug/
+**/Release/
+
+*.suo
+*.sdf
+*.opensdf
+*.db
+
+*.zip
+*.exe
+
+res/
