@@ -280,8 +280,11 @@ static inline bool OnReadyMessage(Component* component, void* sender, int subjec
 
                     readyX = touch->x;
                     readyY = touch->y;
+
+					ADrawable_SetScaleX(AHero_GetDrawable(), touch->x > 0 ? 1.0f : -1.0f);
+
                 }
-            }
+			}
 
             break;
         }
@@ -373,7 +376,7 @@ static inline bool OnDizzyMessage(Component* component, void* sender, int subjec
             touchDownId = -1;
             break;
             
-        case InputTouchType_Move:
+		case InputTouchType_Move:
             break;
             
         case InputTouchType_Cancel:
